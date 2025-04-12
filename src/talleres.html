@@ -394,5 +394,129 @@
       }
     });
   </script>
+
+  <!-- Script de inicialización de Bootstrap -->
+  <script>
+    // Carga de respaldo si bootstrap no está disponible
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verificar si bootstrap ya está disponible (desde main.js)
+      if (typeof bootstrap === 'undefined') {
+        console.warn('Bootstrap no disponible, cargando desde CDN...');
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+        script.onload = function() {
+          console.log('Bootstrap cargado con éxito');
+          initBootstrapComponents();
+        };
+        document.body.appendChild(script);
+      } else {
+        console.log('Bootstrap ya disponible');
+        initBootstrapComponents();
+      }
+      
+      // Función para inicializar componentes
+      function initBootstrapComponents() {
+        console.log('Inicializando componentes...');
+        
+        // 1. Inicializar navegación toggler
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        if (navbarToggler) {
+          console.log('Encontrado navbar toggler');
+          navbarToggler.addEventListener('click', function() {
+            const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
+            if (target && bootstrap.Collapse) {
+              const collapse = new bootstrap.Collapse(target, {toggle: true});
+            }
+          });
+        }
+        
+        // 2. Inicializar modales
+        const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
+        if (modalTriggers.length > 0) {
+          console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
+          modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+              const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
+              if (target && bootstrap.Modal) {
+                const modal = new bootstrap.Modal(target);
+                modal.show();
+              }
+            });
+          });
+        }
+        
+        // 3. Tooltips y popovers
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        if (tooltipTriggerList.length > 0 && bootstrap.Tooltip) {
+          tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+        }
+        
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        if (popoverTriggerList.length > 0 && bootstrap.Popover) {
+          popoverTriggerList.forEach(el => new bootstrap.Popover(el));
+        }
+        
+        // 4. Filtros para participantes (específico para participantes.html)
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        if (filterButtons.length > 0) {
+          console.log(`Encontrados ${filterButtons.length} botones de filtro`);
+          filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+              // Remover clase activa de todos los botones
+              filterButtons.forEach(btn => btn.classList.remove('active'));
+              // Añadir clase activa al botón actual
+              this.classList.add('active');
+              
+              const filterValue = this.getAttribute('data-filter');
+              const participantItems = document.querySelectorAll('.participant-flex-item');
+              
+              participantItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                  item.style.display = '';
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            });
+          });
+        }
+      }
+    });
+  </script>
+
+  <!-- Script para solucionar el problema de bloqueo modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Escucha eventos de cierre de modal
+      document.body.addEventListener('hidden.bs.modal', function() {
+        // Elimina cualquier backdrop residual
+        const backdrops = document.querySelectorAll('.modal-backdrop');
+        if (backdrops.length > 0) {
+          backdrops.forEach(backdrop => {
+            backdrop.remove();
+          });
+        }
+        
+        // Asegúrate de que el body no tenga las clases que bloquean el scroll
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      });
+      
+      // También trata los clics en botones de cierre
+      document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
+        button.addEventListener('click', function() {
+          // Breve retraso para asegurar que se active después del evento de Bootstrap
+          setTimeout(function() {
+            const backdrops = document.querySelectorAll('.modal-backdrop');
+            backdrops.forEach(backdrop => backdrop.remove());
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+          }, 300);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
