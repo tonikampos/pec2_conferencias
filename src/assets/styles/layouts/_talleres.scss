@@ -1,0 +1,296 @@
+/* Usando capas de cascada para talleres */
+@layer base, components, layouts, utilities;
+
+/* Variables específicas para talleres */
+$tech-color: hsl(210, 100%, 50%);
+$design-color: hsl(330, 100%, 50%);
+$business-color: hsl(150, 70%, 40%);
+
+/* Estilos para la página de talleres */
+
+// Variables específicas para talleres
+$workshop-border-radius: 0.75rem;
+$workshop-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+$workshop-transition: all 0.3s ease;
+
+// Estilos para las tarjetas de talleres
+.workshop-card {
+  border-radius: $workshop-border-radius;
+  overflow: hidden;
+  box-shadow: $workshop-shadow;
+  transition: $workshop-transition;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+// Estilos para la imagen del taller
+.workshop-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+// Estilos para niveles y detalles
+.workshop-level {
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.workshop-date, 
+.workshop-time, 
+.workshop-location {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.workshop-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// Clase para truncar texto - versión corregida con prefijos de proveedor y propiedad estándar
+.text-truncate-3 {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* Propiedad estándar futura */
+  overflow: hidden;
+  max-height: 4.5em; /* Fallback para navegadores que no soportan line-clamp */
+}
+
+// Media queries para responsividad
+@media (max-width: 575.98px) {
+  .article-header {
+    padding: 2rem 0;
+    
+    &__title {
+      font-size: 1.75rem;
+    }
+  }
+  
+  .workshop-card {
+    .card-body {
+      padding: 1rem;
+    }
+    
+    .card-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .workshop-details {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    
+    .workshop-time {
+      margin-bottom: 0.25rem;
+      margin-right: 0;
+    }
+  }
+  
+  .workshop-date, 
+  .workshop-time, 
+  .workshop-location {
+    font-size: 0.75rem;
+  }
+  
+  .workshop-img {
+    height: 140px;
+  }
+  
+  .text-truncate-3 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Propiedad estándar futura */
+    max-height: 3em; /* Fallback actualizado para 2 líneas */
+  }
+  
+  // Ajustar botones de filtro
+  .btn-outline-primary {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .workshop-card {
+    .card-title {
+      font-size: 1.05rem;
+    }
+  }
+  
+  .workshop-img {
+    height: 160px;
+  }
+  
+  .workshop-details {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    
+    .workshop-time {
+      margin-bottom: 0.25rem;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .workshop-img {
+    height: 160px;
+  }
+  
+  .workshop-details {
+    .workshop-time, 
+    .workshop-location {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Modal responsivo para inscripción
+@media (max-width: 767.98px) {
+  .modal-body {
+    padding: 1rem;
+    
+    .img-fluid {
+      margin-bottom: 1rem;
+    }
+    
+    .workshop-date {
+      margin-top: 0.5rem;
+    }
+  }
+  
+  // Ajustar formulario
+  form {
+    .form-label {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Animaciones para elementos interactivos
+.workshop-card {
+  .btn-primary {
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Container queries para adaptación avanzada
+@container (width < 576px) {
+  .workshop-card {
+    .card-text {
+      font-size: 0.9rem;
+    }
+    
+    .d-flex.justify-content-between {
+      flex-direction: column;
+      
+      .workshop-details {
+        margin-bottom: 0.75rem;
+      }
+      
+      .btn {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+@container (width >= 576px) and (width < 992px) {
+  .workshop-card {
+    .card-text {
+      -webkit-line-clamp: 3;
+      line-clamp: 3; /* Propiedad estándar futura */
+      max-height: 4.5em; /* Fallback */
+    }
+  }
+}
+
+@container (width >= 992px) {
+  .workshop-card {
+    .card-text {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+/* Asegúrate de que esto esté en tu archivo _talleres.scss */
+@layer layouts {
+  /* Container queries para talleres */
+  @container (width < 600px) {
+    .workshop-card {
+      .card-title {
+        font-size: 1rem;
+      }
+      
+      .card-text {
+        display: -webkit-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2; /* Propiedad estándar futura */
+        overflow: hidden;
+        max-height: 3em; /* Fallback */
+      }
+      
+      .d-flex.mb-3.text-muted.small {
+        flex-direction: column;
+      }
+    }
+  }
+  
+  @container (width >= 600px) and (width < 992px) {
+    .workshop-card {
+      .card-text {
+        display: -webkit-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3; /* Propiedad estándar futura */
+        overflow: hidden;
+        max-height: 4.5em; /* Fallback */
+      }
+    }
+  }
+  
+  @container (width >= 992px) {
+    .workshop-card {
+      &:hover {
+        transform: translateY(-10px);
+      }
+      
+      img {
+        transition: transform 0.5s ease;
+      }
+      
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

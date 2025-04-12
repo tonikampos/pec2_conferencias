@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talleres - Jornadas de Economía Circular</title>
+  <link rel="stylesheet" href="./assets/styles/main.scss">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navbar de Bootstrap -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/logo.png" alt="Logo Jornadas Economía Circular" height="30" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto">
+       
+            <li class="nav-item">
+              <a class="nav-link" href="participantes.html">Ponentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="conferencias.html">Charlas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="talleres.html">Talleres</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section con Breadcrumb -->
+  <section class="bg-light py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Talleres</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <main class="flex-grow-1">
+    <!-- Cabecera de la página -->
+    <div class="article-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <h1 class="article-header__title">Talleres Prácticos</h1>
+            <p class="lead">Participa en sesiones interactivas sobre economía circular</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sección de filtros -->
+    <section class="py-4">
+      <div class="container">
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+          <button class="btn btn-outline-primary active" data-filter="all">Todos</button>
+          <button class="btn btn-outline-primary" data-filter="basic">Nivel básico</button>
+          <button class="btn btn-outline-primary" data-filter="intermediate">Nivel intermedio</button>
+          <button class="btn btn-outline-primary" data-filter="advanced">Nivel avanzado</button>
+        </div>
+        
+        <!-- Lista de talleres -->
+        <div class="row g-4">
+          <!-- Taller 1 -->
+          <div class="col-md-6 col-lg-4 workshop-item" data-category="basic">
+            <div class="card workshop-card h-100">
+              <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Taller de reparación de objetos">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-primary rounded-pill workshop-level">Nivel básico</span>
+                  <div class="workshop-date">
+                    <i class="far fa-calendar-alt"></i> 20 Oct
+                  </div>
+                </div>
+                <h2 class="card-title h5">Taller de reparación de objetos cotidianos</h2>
+                <p class="card-text text-truncate-3 flex-grow-1 mb-3">Aprende técnicas sencillas para reparar objetos del hogar y alargar su vida útil. Un taller práctico donde trabajaremos con herramientas básicas para solucionar problemas comunes en muebles, dispositivos electrónicos y textiles.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="workshop-details">
+                    <span class="workshop-time me-3"><i class="far fa-clock"></i> 2 horas</span>
+                    <span class="workshop-location"><i class="fas fa-map-marker-alt"></i> Sala Taller 1</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#workshopModal1">
+                    Inscribirme
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Taller 2 -->
+          <div class="col-md-6 col-lg-4 workshop-item" data-category="intermediate">
+            <div class="card workshop-card h-100">
+              <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Transformación de residuos">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-warning rounded-pill workshop-level">Nivel intermedio</span>
+                  <div class="workshop-date">
+                    <i class="far fa-calendar-alt"></i> 21 Oct
+                  </div>
+                </div>
+                <h2 class="card-title h5">Transformación de residuos en productos de valor</h2>
+                <p class="card-text text-truncate-3 flex-grow-1 mb-3">Taller práctico donde aprenderemos a transformar diferentes tipos de residuos en productos con valor añadido. Trabajaremos con plástico, papel, cartón y textiles para crear nuevos objetos útiles y decorativos.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="workshop-details">
+                    <span class="workshop-time me-3"><i class="far fa-clock"></i> 3 horas</span>
+                    <span class="workshop-location"><i class="fas fa-map-marker-alt"></i> Sala Taller 2</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#workshopModal2">
+                    Inscribirme
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Taller 3 -->
+          <div class="col-md-6 col-lg-4 workshop-item" data-category="advanced">
+            <div class="card workshop-card h-100">
+              <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Diseño circular">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-danger rounded-pill workshop-level">Nivel avanzado</span>
+                  <div class="workshop-date">
+                    <i class="far fa-calendar-alt"></i> 22 Oct
+                  </div>
+                </div>
+                <h2 class="card-title h5">Principios de diseño circular para profesionales</h2>
+                <p class="card-text text-truncate-3 flex-grow-1 mb-3">Taller avanzado para diseñadores y profesionales donde trabajaremos con metodologías y herramientas para implementar principios de diseño circular en productos y servicios. Casos prácticos y ejercicios de diseño colaborativo.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="workshop-details">
+                    <span class="workshop-time me-3"><i class="far fa-clock"></i> 4 horas</span>
+                    <span class="workshop-location"><i class="fas fa-map-marker-alt"></i> Sala Taller 3</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#workshopModal3">
+                    Inscribirme
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Taller 4 -->
+          <div class="col-md-6 col-lg-4 workshop-item" data-category="basic">
+            <div class="card workshop-card h-100">
+              <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Compostaje urbano">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-primary rounded-pill workshop-level">Nivel básico</span>
+                  <div class="workshop-date">
+                    <i class="far fa-calendar-alt"></i> 20 Oct
+                  </div>
+                </div>
+                <h2 class="card-title h5">Compostaje urbano: aprovecha tus residuos orgánicos</h2>
+                <p class="card-text text-truncate-3 flex-grow-1 mb-3">Aprende técnicas básicas de compostaje adaptadas a entornos urbanos, incluso para pequeños apartamentos. Descubre cómo convertir los residuos orgánicos en compost de calidad para tus plantas.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="workshop-details">
+                    <span class="workshop-time me-3"><i class="far fa-clock"></i> 2 horas</span>
+                    <span class="workshop-location"><i class="fas fa-map-marker-alt"></i> Terraza verde</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#workshopModal4">
+                    Inscribirme
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Taller 5 -->
+          <div class="col-md-6 col-lg-4 workshop-item" data-category="intermediate">
+            <div class="card workshop-card h-100">
+              <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Bioplásticos caseros">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-warning rounded-pill workshop-level">Nivel intermedio</span>
+                  <div class="workshop-date">
+                    <i class="far fa-calendar-alt"></i> 21 Oct
+                  </div>
+                </div>
+                <h2 class="card-title h5">Creación de bioplásticos caseros</h2>
+                <p class="card-text text-truncate-3 flex-grow-1 mb-3">Taller práctico donde aprenderemos a crear alternativas biodegradables al plástico utilizando ingredientes naturales y de fácil acceso. Elaboraremos bioplásticos con diferentes características para diversos usos.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="workshop-details">
+                    <span class="workshop-time me-3"><i class="far fa-clock"></i> 3 horas</span>
+                    <span class="workshop-location"><i class="fas fa-map-marker-alt"></i> Laboratorio</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#workshopModal5">
+                    Inscribirme
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Taller 6 -->
+          <div class="col-md-6 col-lg-4 workshop-item" data-category="advanced">
+            <div class="card workshop-card h-100">
+              <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Modelos circulares">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-danger rounded-pill workshop-level">Nivel avanzado</span>
+                  <div class="workshop-date">
+                    <i class="far fa-calendar-alt"></i> 22 Oct
+                  </div>
+                </div>
+                <h2 class="card-title h5">Implementación de modelos de negocio circulares</h2>
+                <p class="card-text text-truncate-3 flex-grow-1 mb-3">Taller avanzado para emprendedores y empresarios donde trabajaremos en la transformación de modelos de negocio lineales a circulares. Utilizaremos herramientas de diseño de negocio y casos prácticos reales.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="workshop-details">
+                    <span class="workshop-time me-3"><i class="far fa-clock"></i> 4 horas</span>
+                    <span class="workshop-location"><i class="fas fa-map-marker-alt"></i> Sala de reuniones</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#workshopModal6">
+                    Inscribirme
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal para taller 1 (ejemplo - repetir para cada taller) -->
+  <div class="modal fade" id="workshopModal1" tabindex="-1" aria-labelledby="workshopModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModal1Label">Inscripción: Taller de reparación de objetos cotidianos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-5">
+              <img src="./assets/images/workshop1.jpg" class="img-fluid rounded-3 mb-3" alt="Taller de reparación de objetos">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-primary rounded-pill workshop-level">Nivel básico</span>
+                <div class="workshop-date">
+                  <i class="far fa-calendar-alt"></i> 20 Oct
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="far fa-clock text-primary me-2"></i>
+                  <span>Duración: 2 horas (10:00 - 12:00)</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                  <span>Ubicación: Sala Taller 1</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fas fa-users text-primary me-2"></i>
+                  <span>Plazas disponibles: 15</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <h6 class="fw-bold mb-3">Descripción</h6>
+              <p>Aprende técnicas sencillas para reparar objetos del hogar y alargar su vida útil. Un taller práctico donde trabajaremos con herramientas básicas para solucionar problemas comunes en muebles, dispositivos electrónicos y textiles.</p>
+              
+              <p>Durante el taller, se abordarán reparaciones comunes como:</p>
+              <ul>
+                <li>Reparación de muebles: arreglo de patas flojas, tratamiento de arañazos</li>
+                <li>Reparación básica de dispositivos electrónicos</li>
+                <li>Técnicas de costura para alargar la vida de prendas</li>
+              </ul>
+              
+              <h6 class="fw-bold mt-4 mb-3">¿Qué debes traer?</h6>
+              <p>Si tienes algún objeto pequeño que necesite reparación, puedes traerlo. También proporcionaremos materiales para practicar.</p>
+              
+              <h6 class="fw-bold mt-4 mb-3">Formulario de inscripción</h6>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="inscriptionBtn">Confirmar inscripción</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de confirmación -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="inscriptionToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        <strong class="me-auto">Jornadas Economía Circular</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body">
+        ¡Gracias por tu inscripción! Hemos enviado un email de confirmación con todos los detalles del taller.
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pie de página con Bootstrap -->
+  <footer class="bg-primary text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+          <img src="./assets/images/logo.png" alt="Logo Jornadas Economía Circular" height="35" class="footer-logo">
+        </div>
+        <div class="col-md-6 mb-3 mb-md-0">
+          <ul class="nav flex-column flex-sm-row justify-content-center">
+            <li class="nav-item"><a href="index.html" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="participantes.html" class="nav-link text-white">Ponentes</a></li>
+            <li class="nav-item"><a href="conferencias.html" class="nav-link text-white">Charlas</a></li>
+            <li class="nav-item"><a href="talleres.html" class="nav-link text-white">Talleres</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex justify-content-center justify-content-md-end">
+            <a href="https://www.facebook.com/economiacircular" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/economiacircular" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="https://plus.google.com/economiacircular" target="_blank" rel="noopener" class="text-white"><i class="fab fa-google-plus-g"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript para Bootstrap y funcionalidades -->
+  <script type="module">
+    import * as bootstrap from 'bootstrap';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filtrado de talleres por categoría
+      const filterButtons = document.querySelectorAll('[data-filter]');
+      const workshopItems = document.querySelectorAll('.workshop-item');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Quitar clase active de todos los botones
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Añadir clase active al botón clickeado
+          this.classList.add('active');
+          
+          // Filtrar talleres
+          const filterValue = this.getAttribute('data-filter');
+          
+          workshopItems.forEach(item => {
+            if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Manejar inscripción con Toast
+      const inscriptionBtn = document.getElementById('inscriptionBtn');
+      const inscriptionToast = document.getElementById('inscriptionToast');
+      
+      if (inscriptionBtn && inscriptionToast) {
+        inscriptionBtn.addEventListener('click', () => {
+          const toast = new bootstrap.Toast(inscriptionToast);
+          // Cerrar modal
+          const workshopModal = document.querySelector('.modal.show');
+          const modal = bootstrap.Modal.getInstance(workshopModal);
+          modal.hide();
+          // Mostrar toast
+          toast.show();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

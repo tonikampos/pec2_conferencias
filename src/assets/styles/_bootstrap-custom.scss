@@ -1,0 +1,45 @@
+// Custom Bootstrap variables
+$primary: #000078; // UOC corporate color
+$secondary: #73edff; // UOC masterbrand color
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Personalizar tipografía
+$font-family-sans-serif: 'Arial', sans-serif;
+$font-family-serif: 'Georgia', 'Times New Roman', serif;
+$font-weight-bold: 700;
+
+// Personalizar tamaños
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-sm: 0.25rem;
+
+// Personalizar espaciado
+$spacer: 1rem;
+$container-padding-x: 1rem;
+
+// Personalizar colores de los componentes
+$navbar-dark-color: rgba($secondary, .85);
+$navbar-dark-hover-color: $secondary;
+
+// Personalizar breakpoints si es necesario
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ponentes - Jornadas de Economía Circular</title>
+  <link rel="stylesheet" href="./assets/styles/main.scss">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navbar de Bootstrap -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./assets/images/logo.png" alt="Logo Jornadas Economía Circular" height="30" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto">
+         
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="participantes.html">Ponentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="conferencias.html">Charlas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="talleres.html">Talleres</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="bg-light py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Ponentes</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <main class="flex-grow-1">
+    <!-- Cabecera de la página -->
+    <div class="article-header page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <h1 class="article-header__title">Ponentes</h1>
+            <p class="lead">Te  presentamos a nuestros expertos en economía circular que participan en estas jornadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Filtros de categorías usando botones responsivos -->
+    <section class="py-4">
+      <div class="container">
+        <!-- Mejora para mejor responsividad en filtros -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+          <button class="btn btn-outline-primary active" data-filter="all">Todos</button>
+          <button class="btn btn-outline-primary" data-filter="tech">Innovación</button>
+          <button class="btn btn-outline-primary" data-filter="design">Sostenibilidad</button>
+          <button class="btn btn-outline-primary" data-filter="business">Economía</button>
+        </div>
+        
+        <!-- NUEVA RETÍCULA CON FLEXBOX PURO sin clases row/col de Bootstrap -->
+        <div class="participants-flex-grid">
+          <!-- Participante 1 -->
+          <div class="participant-flex-item" data-category="tech">
+            <div class="card participant-card h-100">
+              <div class="participant-card-inner">
+                <div class="participant-image-container">
+                  <img src="./assets/images/CARLOS.png" class="participant-image" alt="Carlos Rodríguez">
+                </div>
+                <div class="participant-content">
+                  <div class="mb-3">
+                    <h2 class="card-title h5">Carlos Apelido1</h2>
+                    <p class="card-subtitle mb-2 text-muted small">Experto en Innovación Sostenible</p>
+                    <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis">Innovación</span>
+                  </div>
+                  <p class="card-text flex-grow-1 text-truncate-3 mb-3 participant-bio">Especialista implementación de tecnologías para la transición hacia modelos circulares. Actualmente asesora a gobiernos en políticas de economía circular.</p>
+                  <button class="btn btn-outline-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#participanteModal1">Ver perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Participante 2 -->
+          <div class="participant-flex-item" data-category="design">
+            <div class="card participant-card h-100">
+              <div class="participant-card-inner">
+                <div class="participant-image-container">
+                  <img src="./assets/images/ANA.png" class="participant-image" alt="Ana Martínez">
+                </div>
+                <div class="participant-content">
+                  <div class="mb-3">
+                    <h2 class="card-title h5">Ana Apelido1</h2>
+                    <p class="card-subtitle mb-2 text-muted small">Diseñadora de Productos Sostenibles</p>
+                    <span class="badge rounded-pill bg-danger-subtle text-danger-emphasis">Sostenibilidad</span>
+                  </div>
+                  <p class="card-text flex-grow-1 text-truncate-3 mb-3 participant-bio">Experta en diseño de productos con materiales reciclados y biodegradables. Ha recibido numerosos premios internacionales. Experta en redefinir los estándares de producción sostenible.</p>
+                  <button class="btn btn-outline-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#participanteModal2">Ver perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Participante 3 -->
+          <div class="participant-flex-item" data-category="business">
+            <div class="card participant-card h-100">
+              <div class="participant-card-inner">
+                <div class="participant-image-container">
+                  <img src="./assets/images/JAVIER.png" class="participant-image" alt="Javier Sánchez">
+                </div>
+                <div class="participant-content">
+                  <div class="mb-3">
+                    <h2 class="card-title h5">Javier Apelido1</h2>
+                    <p class="card-subtitle mb-2 text-muted small">Consultor en Economía Circular y obra pública</p>
+                    <span class="badge rounded-pill bg-success-subtle text-success-emphasis">Economía</span>
+                  </div>
+                  <p class="card-text flex-grow-1 text-truncate-3 mb-3 participant-bio">Especializado en la transformación de modelos de negocio lineales a circulares. Ha asesorado a más de 50 empresas para rediseñar sus procesos productivos para minimizar residuos y maximizar la eficiencia de recursos.</p>
+                  <button class="btn btn-outline-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#participanteModal3">Ver perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Participante 4 -->
+          <div class="participant-flex-item" data-category="tech">
+            <div class="card participant-card h-100">
+              <div class="participant-card-inner">
+                <div class="participant-image-container">
+                  <img src="./assets/images/LAURA.png" class="participant-image" alt="Laura Gómez">
+                </div>
+                <div class="participant-content">
+                  <div class="mb-3">
+                    <h2 class="card-title h5">Laura Apelido1</h2>
+                    <p class="card-subtitle mb-2 text-muted small">Experta en Energías Renovables</p>
+                    <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis">Innovación</span>
+                  </div>
+                  <p class="card-text flex-grow-1 text-truncate-3 mb-3 participant-bio">Investigadora con amplia trayectoria en el desarrollo de sistemas energéticos sostenibles que apoyan los principios de la economía circular. Ha liderado proyectos de integración de energías renovables en cadenas de producción circulares.</p>
+                  <button class="btn btn-outline-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#participanteModal4">Ver perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Participante 5 -->
+          <div class="participant-flex-item" data-category="business">
+            <div class="card participant-card h-100">
+              <div class="participant-card-inner">
+                <div class="participant-image-container">
+                  <img src="./assets/images/MIGUEL.png" class="participant-image" alt="Miguel Torres">
+                </div>
+                <div class="participant-content">
+                  <div class="mb-3">
+                    <h2 class="card-title h5">Miguel Apelido1</h2>
+                    <p class="card-subtitle mb-2 text-muted small">Director de Políticas Circulares</p>
+                    <span class="badge rounded-pill bg-success-subtle text-success-emphasis">Economía</span>
+                  </div>
+                  <p class="card-text flex-grow-1 text-truncate-3 mb-3 participant-bio">Experto en la elaboración e implementación de políticas públicas para promover la economía circular a nivel local y regional. Ha desarrollado planes estratégicos para varias ciudades europeas comprometidas con la sostenibilidad.</p>
+                  <button class="btn btn-outline-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#participanteModal5">Ver perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Participante 6 -->
+          <div class="participant-flex-item" data-category="design">
+            <div class="card participant-card h-100">
+              <div class="participant-card-inner">
+                <div class="participant-image-container">
+                  <img src="./assets/images/SOFIA.png" class="participant-image" alt="Sofia López">
+                </div>
+                <div class="participant-content">
+                  <div class="mb-3">
+                    <h2 class="card-title h5">Sofia Apelido1</h2>
+                    <p class="card-subtitle mb-2 text-muted small">Experta en Materiales Sostenibles</p>
+                    <span class="badge rounded-pill bg-danger-subtle text-danger-emphasis">Sostenibilidad</span>
+                  </div>
+                  <p class="card-text flex-grow-1 text-truncate-3 mb-3 participant-bio">Investigadora centrada en el desarrollo de nuevos materiales biodegradables y compostables para la industria. Su trabajo ha permitido crear alternativas sostenibles a los plásticos tradicionales utilizando residuos agrícolas.</p>
+                  <button class="btn btn-outline-primary btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#participanteModal6">Ver perfil</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modales para cada participante -->
+  <!-- Modal para participante 1 -->
+  <div class="modal fade" id="participanteModal1" tabindex="-1" aria-labelledby="participanteModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="participanteModalLabel1">Carlos Rodríguez</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="./assets/images/CARLOS.png" class="img-fluid rounded-3 mb-3 mb-md-0" alt="Carlos Rodríguez">
+              <div class="participant-social mt-3">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6 class="fw-bold">Experto en Innovación Sostenible</h6>
+              <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis mb-3">Innovación</span>
+              
+              <p>Especialista en la implementación de tecnologías para la transición hacia modelos circulares. Ha liderado proyectos de transformación en multinacionales y actualmente asesora a gobiernos en políticas de economía circular.</p>
+              
+              <p>Con más de 15 años de experiencia en el sector, Carlos ha trabajado en la implementación de soluciones tecnológicas que facilitan la trazabilidad de materiales, la optimización de procesos y la reducción de residuos en diferentes industrias.</p>
+              
+              <h6 class="mt-4 mb-3">Charlas en las jornadas</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Tecnologías emergentes para impulsar la circularidad</span>
+                  <span class="badge bg-primary rounded-pill">20 Oct, 10:00</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Mesa redonda: Innovación y sostenibilidad</span>
+                  <span class="badge bg-primary rounded-pill">21 Oct, 16:30</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="conferencias.html" class="btn btn-primary">Ver sus charlas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para participante 2 -->
+  <div class="modal fade" id="participanteModal2" tabindex="-1" aria-labelledby="participanteModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="participanteModalLabel2">Ana Apelido1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="./assets/images/ANA.png" class="img-fluid rounded-3 mb-3 mb-md-0" alt="Ana Martínez">
+              <div class="participant-social mt-3">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6 class="fw-bold">Diseñadora de Productos Sostenibles</h6>
+              <span class="badge rounded-pill bg-danger-subtle text-danger-emphasis mb-3">Sostenibilidad</span>
+              
+              <p>Experta en diseño de productos con materiales reciclados y biodegradables. Ha recibido numerosos premios internacionales por sus innovaciones en embalajes sostenibles y productos de consumo diario.</p>
+              
+              <p>Con un enfoque centrado en la durabilidad y el ciclo de vida completo, Ana trabaja para redefinir los estándares de producción sostenible en la industria del diseño.</p>
+              
+              <h6 class="mt-4 mb-3">Charlas en las jornadas</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Diseño para la circularidad: principios y casos prácticos</span>
+                  <span class="badge bg-primary rounded-pill">20 Oct, 12:30</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Taller: Rediseño de productos para maximizar su vida útil</span>
+                  <span class="badge bg-primary rounded-pill">22 Oct, 09:00</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="conferencias.html" class="btn btn-primary">Ver sus charlas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para participante 3 -->
+  <div class="modal fade" id="participanteModal3" tabindex="-1" aria-labelledby="participanteModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="participanteModalLabel3">Javier Apelido1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="./assets/images/JAVIER.png" class="img-fluid rounded-3 mb-3 mb-md-0" alt="Javier Sánchez">
+              <div class="participant-social mt-3">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6 class="fw-bold">Consultor en Economía Circular y obra pública</h6>
+              <span class="badge rounded-pill bg-success-subtle text-success-emphasis mb-3">Economía</span>
+              
+              <p>Especializado en la transformación de modelos de negocio lineales a circulares. Ha asesorado a más de 50 empresas para rediseñar sus procesos productivos para minimizar residuos y maximizar la eficiencia de recursos.</p>
+              
+              <p>Javier es autor del libro "Economía Circular: El nuevo paradigma empresarial" y colabora regularmente con universidades y centros de investigación para desarrollar nuevos enfoques económicos sostenibles.</p>
+              
+              <h6 class="mt-4 mb-3">Charlas en las jornadas</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Modelos de negocio circulares: casos de éxito</span>
+                  <span class="badge bg-primary rounded-pill">21 Oct, 10:00</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Mesa redonda: Barreras económicas para la transición circular</span>
+                  <span class="badge bg-primary rounded-pill">22 Oct, 16:00</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="conferencias.html" class="btn btn-primary">Ver sus charlas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para participante 4 -->
+  <div class="modal fade" id="participanteModal4" tabindex="-1" aria-labelledby="participanteModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="participanteModalLabel4">Laura Apelido1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="./assets/images/LAURA.png" class="img-fluid rounded-3 mb-3 mb-md-0" alt="Laura Gómez">
+              <div class="participant-social mt-3">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6 class="fw-bold">Experta en Energías Renovables</h6>
+              <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis mb-3">Innovación</span>
+              
+              <p>Investigadora con amplia trayectoria en el desarrollo de sistemas energéticos sostenibles que apoyan los principios de la economía circular. Ha liderado proyectos de integración de energías renovables en cadenas de producción circulares.</p>
+              
+              <p>Laura ha desarrollado métodos innovadores para el almacenamiento de energía y la optimización de sistemas que permiten cerrar ciclos en procesos industriales intensivos en energía, reduciendo significativamente su huella ambiental.</p>
+              
+              <h6 class="mt-4 mb-3">Charlas en las jornadas</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Energía renovable en sistemas circulares</span>
+                  <span class="badge bg-primary rounded-pill">20 Oct, 15:00</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Taller: Optimización energética en procesos industriales</span>
+                  <span class="badge bg-primary rounded-pill">21 Oct, 13:30</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="conferencias.html" class="btn btn-primary">Ver sus charlas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para participante 5 -->
+  <div class="modal fade" id="participanteModal5" tabindex="-1" aria-labelledby="participanteModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="participanteModalLabel5">Miguel Apelido1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="./assets/images/MIGUEL.png" class="img-fluid rounded-3 mb-3 mb-md-0" alt="Miguel Torres">
+              <div class="participant-social mt-3">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6 class="fw-bold">Director de Políticas Circulares</h6>
+              <span class="badge rounded-pill bg-success-subtle text-success-emphasis mb-3">Economía</span>
+              
+              <p>Experto en la elaboración e implementación de políticas públicas para promover la economía circular a nivel local y regional. Ha desarrollado planes estratégicos para varias ciudades europeas comprometidas con la sostenibilidad.</p>
+              
+              <p>Su trabajo se centra en la creación de marcos regulatorios que incentiven la transición hacia modelos circulares, facilitando la colaboración entre sectores público y privado para maximizar el impacto positivo.</p>
+              
+              <h6 class="mt-4 mb-3">Charlas en las jornadas</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Políticas públicas para impulsar la circularidad</span>
+                  <span class="badge bg-primary rounded-pill">21 Oct, 12:00</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Mesa redonda: Marco legislativo para la economía circular</span>
+                  <span class="badge bg-primary rounded-pill">22 Oct, 11:30</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="conferencias.html" class="btn btn-primary">Ver sus charlas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para participante 6 -->
+  <div class="modal fade" id="participanteModal6" tabindex="-1" aria-labelledby="participanteModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="participanteModalLabel6">Sofia Apelido1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="./assets/images/SOFIA.png" class="img-fluid rounded-3 mb-3 mb-md-0" alt="Sofia López">
+              <div class="participant-social mt-3">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <h6 class="fw-bold">Experta en Materiales Sostenibles</h6>
+              <span class="badge rounded-pill bg-danger-subtle text-danger-emphasis mb-3">Sostenibilidad</span>
+              
+              <p>Investigadora centrada en el desarrollo de nuevos materiales biodegradables y compostables para la industria. Su trabajo ha permitido crear alternativas sostenibles a los plásticos tradicionales utilizando residuos agrícolas.</p>
+              
+              <p>Sofía lidera un laboratorio de investigación donde explora constantemente nuevas formas de aprovechar residuos y subproductos para transformarlos en materiales de valor. Ha patentado varios procesos que están siendo adoptados por empresas líderes en sostenibilidad.</p>
+              
+              <h6 class="mt-4 mb-3">Charlas en las jornadas</h6>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Bioplásticos y biomateriales: presente y futuro</span>
+                  <span class="badge bg-primary rounded-pill">20 Oct, 16:30</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between align-items-center flex-wrap">
+                  <span class="fw-medium">Taller: Identificación y usos de materiales sostenibles</span>
+                  <span class="badge bg-primary rounded-pill">22 Oct, 14:00</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="conferencias.html" class="btn btn-primary">Ver sus charlas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página con Bootstrap -->
+  <footer class="bg-primary text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+          <img src="./assets/images/logo.png" alt="Logo Jornadas Economía Circular" height="35" class="footer-logo">
+        </div>
+        <div class="col-md-6 mb-3 mb-md-0">
+          <ul class="nav flex-column flex-sm-row justify-content-center">
+            <li class="nav-item"><a href="index.html" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="participantes.html" class="nav-link text-white">Ponentes</a></li>
+            <li class="nav-item"><a href="conferencias.html" class="nav-link text-white">Charlas</a></li>
+            <li class="nav-item"><a href="talleres.html" class="nav-link text-white">Talleres</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex justify-content-center justify-content-md-end">
+            <a href="https://www.facebook.com/economiacircular" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/economiacircular" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="https://plus.google.com/economiacircular" target="_blank" rel="noopener" class="text-white"><i class="fab fa-google-plus-g"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript para Bootstrap y funcionalidades -->
+  <script type="module">
+    import * as bootstrap from 'bootstrap';
+    
+    // Filtrado de participantes por categoría
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('[data-filter]');
+      const participantCards = document.querySelectorAll('.participant-flex-item[data-category]');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Actualizar botones activos
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filtrar participantes
+          participantCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

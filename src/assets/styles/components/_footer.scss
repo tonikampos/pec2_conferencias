@@ -1,0 +1,89 @@
+// _footer.scss
+.footer {
+    background-color: $uoc-corporate;
+    color: $secondary-color;
+    padding: 2rem 0;
+  
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      @media (min-width: $breakpoint-medium) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  
+    &__logo {
+      max-width: 100px;
+      margin-bottom: 1.5rem;
+      
+      @media (min-width: $breakpoint-medium) {
+        margin-bottom: 0;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  
+    &__nav {
+      margin-bottom: 1.5rem;
+      
+      @media (min-width: $breakpoint-medium) {
+        margin-bottom: 0;
+      }
+      
+      .nav__list {
+        display: flex;          /* Asegurar display flex */
+        flex-direction: row;    /* Forzar dirección horizontal */
+        justify-content: center;
+        list-style: none;       /* Eliminar puntos de lista */
+        padding: 0;
+        margin: 0;
+      }
+      
+      .nav__item {
+        margin: 0 0.75rem;      /* Margen horizontal entre elementos */
+      }
+      
+      .nav__link {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        color: $secondary-color;
+        text-decoration: none;
+        
+        &:hover {
+          color: $uoc-masterbrand;
+        }
+      }
+    }
+  
+    &__social {
+      display: flex;
+      justify-content: center;
+      
+      .social__link {
+        margin: 0 0.5rem;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-3px);
+        }
+        
+        img {
+          width: 24px;
+          height: 24px;
+          
+          @media (min-width: $breakpoint-medium) {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+}

@@ -1,0 +1,44 @@
+@use "sass:color";
+
+// Fuentes
+$font-family-sans-serif: 'Arial', sans-serif;
+$font-family-serif: 'Georgia', 'Times New Roman', serif;
+
+// Colores corporativos
+$uoc-corporate: #000078;
+$uoc-masterbrand: #73edff;
+$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+
+// Colores personalizados
+$primary-color: #007800;
+$secondary-color: #fff;
+$text-color: #333;
+$border-color: #ddd;
+
+// Tipografía
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+
+// Espaciado
+$gap-small: 0.5rem;
+$gap-medium: 1rem;
+$gap-large: 2rem;
+
+// Bordes
+$border-radius: 0.5rem;
+
+// Media queries
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+// Variable antigua para compatibilidad
+$mqMinWidth: 420px;  // Mantener esta variable si es necesaria para código existente
+
+// Container
+$container-padding: 15px;
+$container-max-width: 1140px;

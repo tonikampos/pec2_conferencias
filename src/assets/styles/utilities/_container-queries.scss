@@ -1,0 +1,59 @@
+/* Container queries para componentes responsive */
+.cq-container {
+    container-type: inline-size;
+    container-name: content;
+  }
+  
+  /* Estilos para la sección de bienvenida en el index */
+  @container (width < 600px) {
+    .welcome-section {
+      .card {
+        border-radius: 0;
+      }
+      .card-title {
+        font-size: 1.25rem;
+      }
+      .card-text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  @container (width >= 600px) {
+    .welcome-section {
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+  
+  /* Estilos para la sección de eventos destacados */
+  @container (width < 768px) {
+    .featured-section {
+      .feature-card {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  
+  @container (width >= 768px) {
+    .featured-section {
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        
+        .col-md-4 {
+          display: flex;
+        }
+        
+        .feature-card {
+          flex: 1;
+        }
+      }
+    }
+  }

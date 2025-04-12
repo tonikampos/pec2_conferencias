@@ -1,0 +1,74 @@
+/**
+ * Import Bootstrap and customize
+ */
+// Primero importa tus variables personalizadas
+@import "bootstrap-custom";
+
+// Luego importa las funciones y variables de Bootstrap
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+// Ahora importa Bootstrap completo
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+/**
+ * Import FontAwesome
+ */
+@import "../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+/**
+ * Import variables (tus variables actuales)
+ */
+@import "base/variables";
+
+/**
+ * Import utilities
+ */
+@import "utilities/mixins";
+@import "utilities/functions";
+
+/**
+ * Import base styles
+ */
+@import "base/reset";
+@import "base/typography";
+
+/**
+ * Import container queries
+ */
+@import "utilities/container-queries";
+
+/**
+ * Import components
+ */
+@import "components/header";
+@import "components/footer";
+@import "components/hero";
+
+/**
+ * Import layouts
+ */
+@import "layouts/grid";
+@import "layouts/home";
+@import "layouts/participants";
+@import "layouts/conferencias";
+@import "layouts/talleres";
+// Añadir al final del archivo
+
+/* Fix para el desplazamiento del menú entre páginas */
+html {
+    overflow-y: scroll; /* Forzar barra de desplazamiento siempre visible */
+  }
+  
+  body {
+    padding-right: 0 !important; /* Prevenir padding automático por Bootstrap modals */
+  }
+  
+  .navbar {
+    width: 100%;
+    min-height: 62px; /* Fijar altura mínima */
+  }

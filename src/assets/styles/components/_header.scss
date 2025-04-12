@@ -1,0 +1,116 @@
+// _header.scss
+.header {
+  background-color: $uoc-corporate;
+  padding: $gap-medium 0;
+  position: relative;
+  
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  &__logo {
+    max-width: 120px;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  
+  &__menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    
+    @media (min-width: $breakpoint-medium) {
+      display: none;
+    }
+    
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: $secondary-color;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    &.active {
+      .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+  
+  &__nav {
+    @media (max-width: ($breakpoint-medium - 1px)) {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      
+      &.active {
+        max-height: 300px;
+        margin-top: 1rem;
+      }
+    }
+  }
+  
+  .nav {
+    &__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      @media (max-width: ($breakpoint-medium - 1px)) {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+    
+    &__item {
+      @media (min-width: $breakpoint-medium) {
+        margin: 0 0 0 1.5rem;
+      }
+      
+      @media (max-width: ($breakpoint-medium - 1px)) {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    &__link {
+      display: block;
+      color: $secondary-color;
+      text-decoration: none;
+      font-weight: $font-weight-bold;
+      padding: 0.5rem 0;
+      
+      @media (max-width: ($breakpoint-medium - 1px)) {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      &:hover {
+        color: $uoc-masterbrand;
+      }
+    }
+  }
+}
