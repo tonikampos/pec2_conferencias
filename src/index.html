@@ -356,5 +356,28 @@
       });
     });
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inscripcionBtn = document.getElementById('inscripcionBtn');
+      const inscripcionToast = document.getElementById('inscripcionToast');
+      
+      if (inscripcionBtn && inscripcionToast) {
+        inscripcionBtn.addEventListener('click', function() {
+          // Verificar si bootstrap está disponible
+          if (typeof bootstrap !== 'undefined') {
+            const toast = new bootstrap.Toast(inscripcionToast);
+            toast.show();
+          } else {
+            // Fallback si bootstrap no está disponible
+            inscripcionToast.classList.add('show');
+            setTimeout(function() {
+              inscripcionToast.classList.remove('show');
+            }, 5000);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

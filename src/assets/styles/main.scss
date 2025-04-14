@@ -1,10 +1,9 @@
 /**
  * Import Bootstrap and customize
  */
-// Primero importa tus variables personalizadas
+
 @import "bootstrap-custom";
 
-// Luego importa las funciones y variables de Bootstrap
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/variables-dark";
@@ -12,7 +11,6 @@
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/utilities";
 
-// Ahora importa Bootstrap completo
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 /**

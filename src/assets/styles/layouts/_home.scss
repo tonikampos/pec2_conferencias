@@ -391,7 +391,7 @@ body {
 
 // Contenedor principal con CSS Grid
 .poster-grid {
-  // Versión para navegadores que no soportan Grid
+  // Versión para navegadores que non soportan Grid
   @supports not (display: grid) {
     display: block;
     max-width: 1200px;

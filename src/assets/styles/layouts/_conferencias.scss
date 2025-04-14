@@ -305,7 +305,6 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
 
 /* Estilos para el formato de blog/artículo */
 
-// Usa :has() para estilizar elementos que contienen otros elementos específicos
 .article-figure:has(figcaption) {
   margin-bottom: 2.5rem;
   
@@ -313,14 +312,12 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
   
-  // Mejora el caption para que sea más visible
   figcaption {
     margin-top: 0.5rem;
     font-style: italic;
   }
 }
 
-// Usa :is() para aplicar estilos a múltiples selectores relacionados
 :is(.article-title, h2, h3) {
   margin-bottom: 1.25rem;
   font-weight: 600;
