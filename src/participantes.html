@@ -540,6 +540,38 @@
     });
   </script>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const participantItems = document.querySelectorAll('.participant-flex-item');
+    
+    console.log(`Encontrados ${filterButtons.length} botones de filtro`);
+    console.log(`Encontrados ${participantItems.length} elementos para filtrar`);
+    
+    if (filterButtons.length > 0 && participantItems.length > 0) {
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remover clase activa de todos los botones
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Añadir clase activa al botón actual
+          this.classList.add('active');
+          
+          const filterValue = this.getAttribute('data-filter');
+          console.log(`Aplicando filtro: ${filterValue}`);
+          
+          participantItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  });
+</script>
+
   <!-- Script de inicialización de Bootstrap -->
   <script>
     // Carga de respaldo si bootstrap no está disponible
