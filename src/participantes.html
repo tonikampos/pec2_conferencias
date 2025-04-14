@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./assets/styles/main.scss">
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <!-- Navbar de Bootstrap -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
       <div class="container">
@@ -47,7 +46,6 @@
   </section>
 
   <main class="flex-grow-1">
-    <!-- Cabecera de la página -->
     <div class="article-header page-header">
       <div class="container">
         <div class="row">
@@ -59,10 +57,8 @@
       </div>
     </div>
     
-    <!-- Filtros de categorías usando botones responsivos -->
     <section class="py-4">
       <div class="container">
-        <!-- Mejora para mejor responsividad en filtros -->
         <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
           <button class="btn btn-outline-primary active" data-filter="all">Todos</button>
           <button class="btn btn-outline-primary" data-filter="tech">Innovación</button>
@@ -71,7 +67,6 @@
         </div>
         
         <div class="participants-flex-grid">
-          <!-- Participante 1 -->
           <div class="participant-flex-item" data-category="tech">
             <div class="card participant-card h-100">
               <div class="participant-card-inner">
@@ -91,7 +86,6 @@
             </div>
           </div>
           
-          <!-- Participante 2 -->
           <div class="participant-flex-item" data-category="design">
             <div class="card participant-card h-100">
               <div class="participant-card-inner">
@@ -111,7 +105,6 @@
             </div>
           </div>
           
-          <!-- Participante 3 -->
           <div class="participant-flex-item" data-category="business">
             <div class="card participant-card h-100">
               <div class="participant-card-inner">
@@ -131,7 +124,6 @@
             </div>
           </div>
           
-          <!-- Participante 4 -->
           <div class="participant-flex-item" data-category="tech">
             <div class="card participant-card h-100">
               <div class="participant-card-inner">
@@ -151,7 +143,6 @@
             </div>
           </div>
           
-          <!-- Participante 5 -->
           <div class="participant-flex-item" data-category="business">
             <div class="card participant-card h-100">
               <div class="participant-card-inner">
@@ -171,7 +162,6 @@
             </div>
           </div>
           
-          <!-- Participante 6 -->
           <div class="participant-flex-item" data-category="design">
             <div class="card participant-card h-100">
               <div class="participant-card-inner">
@@ -195,8 +185,6 @@
     </section>
   </main>
 
-  <!-- Modales para cada participante -->
-  <!-- Modal para participante 1 -->
   <div class="modal fade" id="participanteModal1" tabindex="-1" aria-labelledby="participanteModalLabel1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -244,7 +232,6 @@
     </div>
   </div>
 
-  <!-- Modal para participante 2 -->
   <div class="modal fade" id="participanteModal2" tabindex="-1" aria-labelledby="participanteModalLabel2" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -292,7 +279,6 @@
     </div>
   </div>
 
-  <!-- Modal para participante 3 -->
   <div class="modal fade" id="participanteModal3" tabindex="-1" aria-labelledby="participanteModalLabel3" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -340,7 +326,6 @@
     </div>
   </div>
 
-  <!-- Modal para participante 4 -->
   <div class="modal fade" id="participanteModal4" tabindex="-1" aria-labelledby="participanteModalLabel4" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -388,7 +373,6 @@
     </div>
   </div>
 
-  <!-- Modal para participante 5 -->
   <div class="modal fade" id="participanteModal5" tabindex="-1" aria-labelledby="participanteModalLabel5" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -436,7 +420,6 @@
     </div>
   </div>
 
-  <!-- Modal para participante 6 -->
   <div class="modal fade" id="participanteModal6" tabindex="-1" aria-labelledby="participanteModalLabel6" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -484,7 +467,6 @@
     </div>
   </div>
 
-  <!-- Pie de página con Bootstrap -->
   <footer class="bg-primary text-white py-4">
     <div class="container">
       <div class="row align-items-center">
@@ -510,11 +492,9 @@
     </div>
   </footer>
   
-  <!-- JavaScript para Bootstrap y funcionalidades -->
   <script type="module">
     import * as bootstrap from 'bootstrap';
     
-    // Filtrado de participantes por categoría
     document.addEventListener('DOMContentLoaded', function() {
       const filterButtons = document.querySelectorAll('[data-filter]');
       const participantCards = document.querySelectorAll('.participant-flex-item[data-category]');
@@ -523,11 +503,9 @@
         button.addEventListener('click', function() {
           const filterValue = this.getAttribute('data-filter');
           
-          // Actualizar botones activos
           filterButtons.forEach(btn => btn.classList.remove('active'));
           this.classList.add('active');
           
-          // Filtrar participantes
           participantCards.forEach(card => {
             if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
               card.style.display = 'block';
@@ -551,9 +529,7 @@
     if (filterButtons.length > 0 && participantItems.length > 0) {
       filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-          // Remover clase activa de todos los botones
           filterButtons.forEach(btn => btn.classList.remove('active'));
-          // Añadir clase activa al botón actual
           this.classList.add('active');
           
           const filterValue = this.getAttribute('data-filter');
@@ -572,17 +548,13 @@
   });
 </script>
 
-  <!-- Script de inicialización de Bootstrap -->
   <script>
-    // Carga de respaldo si bootstrap no está disponible
     document.addEventListener('DOMContentLoaded', function() {
-      // Definir una variable global para rastrear si ya se inicializaron los componentes
       if (window.bootstrapComponentsInitialized) {
         console.log('Los componentes Bootstrap ya fueron inicializados');
         return;
       }
       
-      // Verificar si bootstrap ya está disponible
       if (typeof bootstrap === 'undefined') {
         console.warn('Bootstrap no disponible, cargando desde CDN...');
         const script = document.createElement('script');
@@ -598,20 +570,15 @@
       }
       
       function initBootstrapComponents() {
-        // Marcar que los componentes ya fueron inicializados
         window.bootstrapComponentsInitialized = true;
         
-        // Resto de tu código de inicialización...
       }
     });
   </script>
 
-  <!-- Script para solucionar el problema de bloqueo modal -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Escucha eventos de cierre de modal
       document.body.addEventListener('hidden.bs.modal', function() {
-        // Elimina cualquier backdrop residual
         const backdrops = document.querySelectorAll('.modal-backdrop');
         if (backdrops.length > 0) {
           backdrops.forEach(backdrop => {
@@ -619,16 +586,13 @@
           });
         }
         
-        // Asegúrate de que el body no tenga las clases que bloquean el scroll
         document.body.classList.remove('modal-open');
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
       });
       
-      // También trata los clics en botones de cierre
       document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
         button.addEventListener('click', function() {
-          // Breve retraso para asegurar que se active después del evento de Bootstrap
           setTimeout(function() {
             const backdrops = document.querySelectorAll('.modal-backdrop');
             backdrops.forEach(backdrop => backdrop.remove());

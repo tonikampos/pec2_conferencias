@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./assets/styles/main.scss">
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <!-- Navbar de Bootstrap -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
       <div class="container">
@@ -35,7 +34,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section con Breadcrumb -->
   <section class="bg-light py-3">
     <div class="container">
       <nav aria-label="breadcrumb">
@@ -48,7 +46,6 @@
   </section>
 
   <main class="flex-grow-1">
-    <!-- Cabecera de la página -->
     <div class="article-header">
       <div class="container">
         <div class="row">
@@ -60,7 +57,6 @@
       </div>
     </div>
     
-    <!-- Sección de filtros -->
     <section class="py-4">
       <div class="container">
         <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
@@ -70,9 +66,7 @@
           <button class="btn btn-outline-primary" data-filter="advanced">Nivel avanzado</button>
         </div>
         
-        <!-- Lista de talleres -->
         <div class="row g-4">
-          <!-- Taller 1 -->
           <div class="col-md-6 col-lg-4 workshop-item" data-category="basic">
             <div class="card workshop-card h-100">
               <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Taller de reparación de objetos">
@@ -98,7 +92,6 @@
             </div>
           </div>
           
-          <!-- Taller 2 -->
           <div class="col-md-6 col-lg-4 workshop-item" data-category="intermediate">
             <div class="card workshop-card h-100">
               <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Transformación de residuos">
@@ -124,7 +117,6 @@
             </div>
           </div>
           
-          <!-- Taller 3 -->
           <div class="col-md-6 col-lg-4 workshop-item" data-category="advanced">
             <div class="card workshop-card h-100">
               <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Diseño circular">
@@ -150,7 +142,6 @@
             </div>
           </div>
           
-          <!-- Taller 4 -->
           <div class="col-md-6 col-lg-4 workshop-item" data-category="basic">
             <div class="card workshop-card h-100">
               <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Compostaje urbano">
@@ -176,7 +167,6 @@
             </div>
           </div>
           
-          <!-- Taller 5 -->
           <div class="col-md-6 col-lg-4 workshop-item" data-category="intermediate">
             <div class="card workshop-card h-100">
               <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Bioplásticos caseros">
@@ -202,7 +192,6 @@
             </div>
           </div>
           
-          <!-- Taller 6 -->
           <div class="col-md-6 col-lg-4 workshop-item" data-category="advanced">
             <div class="card workshop-card h-100">
               <img src="./assets/images/workshop1.jpg" class="card-img-top workshop-img" alt="Modelos circulares">
@@ -232,7 +221,6 @@
     </section>
   </main>
 
-  <!-- Modal para taller 1 (ejemplo - repetir para cada taller) -->
   <div class="modal fade" id="workshopModal1" tabindex="-1" aria-labelledby="workshopModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -307,7 +295,6 @@
     </div>
   </div>
 
-  <!-- Toast de confirmación -->
   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
     <div id="inscriptionToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
@@ -322,7 +309,6 @@
     </div>
   </div>
   
-  <!-- Pie de página con Bootstrap -->
   <footer class="bg-primary text-white py-4">
     <div class="container">
       <div class="row align-items-center">
@@ -348,23 +334,18 @@
     </div>
   </footer>
 
-  <!-- JavaScript para Bootstrap y funcionalidades -->
   <script type="module">
     import * as bootstrap from 'bootstrap';
     
     document.addEventListener('DOMContentLoaded', function() {
-      // Filtrado de talleres por categoría
       const filterButtons = document.querySelectorAll('[data-filter]');
       const workshopItems = document.querySelectorAll('.workshop-item');
       
       filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-          // Quitar clase active de todos los botones
           filterButtons.forEach(btn => btn.classList.remove('active'));
-          // Añadir clase active al botón clickeado
           this.classList.add('active');
           
-          // Filtrar talleres
           const filterValue = this.getAttribute('data-filter');
           
           workshopItems.forEach(item => {
@@ -377,29 +358,23 @@
         });
       });
       
-      // Manejar inscripción con Toast
       const inscriptionBtn = document.getElementById('inscriptionBtn');
       const inscriptionToast = document.getElementById('inscriptionToast');
       
       if (inscriptionBtn && inscriptionToast) {
         inscriptionBtn.addEventListener('click', () => {
           const toast = new bootstrap.Toast(inscriptionToast);
-          // Cerrar modal
           const workshopModal = document.querySelector('.modal.show');
           const modal = bootstrap.Modal.getInstance(workshopModal);
           modal.hide();
-          // Mostrar toast
           toast.show();
         });
       }
     });
   </script>
 
-  <!-- Script de inicialización de Bootstrap -->
   <script>
-    // Carga de respaldo si bootstrap no está disponible
     document.addEventListener('DOMContentLoaded', function() {
-      // Verificar si bootstrap ya está disponible (desde main.js)
       if (typeof bootstrap === 'undefined') {
         console.warn('Bootstrap no disponible, cargando desde CDN...');
         const script = document.createElement('script');
@@ -414,11 +389,9 @@
         initBootstrapComponents();
       }
       
-      // Función para inicializar componentes
       function initBootstrapComponents() {
         console.log('Inicializando componentes...');
         
-        // 1. Inicializar navegación toggler
         const navbarToggler = document.querySelector('.navbar-toggler');
         if (navbarToggler) {
           console.log('Encontrado navbar toggler');
@@ -430,7 +403,6 @@
           });
         }
         
-        // 2. Inicializar modales
         const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
         if (modalTriggers.length > 0) {
           console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
@@ -445,7 +417,6 @@
           });
         }
         
-        // 3. Tooltips y popovers
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         if (tooltipTriggerList.length > 0 && bootstrap.Tooltip) {
           tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
@@ -456,15 +427,12 @@
           popoverTriggerList.forEach(el => new bootstrap.Popover(el));
         }
         
-        // 4. Filtros para participantes (específico para participantes.html)
         const filterButtons = document.querySelectorAll('[data-filter]');
         if (filterButtons.length > 0) {
           console.log(`Encontrados ${filterButtons.length} botones de filtro`);
           filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-              // Remover clase activa de todos los botones
               filterButtons.forEach(btn => btn.classList.remove('active'));
-              // Añadir clase activa al botón actual
               this.classList.add('active');
               
               const filterValue = this.getAttribute('data-filter');
@@ -484,12 +452,9 @@
     });
   </script>
 
-  <!-- Script para solucionar el problema de bloqueo modal -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Escucha eventos de cierre de modal
       document.body.addEventListener('hidden.bs.modal', function() {
-        // Elimina cualquier backdrop residual
         const backdrops = document.querySelectorAll('.modal-backdrop');
         if (backdrops.length > 0) {
           backdrops.forEach(backdrop => {
@@ -497,16 +462,13 @@
           });
         }
         
-        // Asegúrate de que el body no tenga las clases que bloquean el scroll
         document.body.classList.remove('modal-open');
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
       });
       
-      // También trata los clics en botones de cierre
       document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
         button.addEventListener('click', function() {
-          // Breve retraso para asegurar que se active después del evento de Bootstrap
           setTimeout(function() {
             const backdrops = document.querySelectorAll('.modal-backdrop');
             backdrops.forEach(backdrop => backdrop.remove());

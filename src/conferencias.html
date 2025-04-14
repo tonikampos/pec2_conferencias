@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./assets/styles/main.scss">
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <!-- Navbar de Bootstrap -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
       <div class="container">
@@ -35,7 +34,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section con Breadcrumb -->
   <section class="bg-light py-3">
     <div class="container">
       <nav aria-label="breadcrumb">
@@ -48,16 +46,13 @@
   </section>
 
   <main class="flex-grow-1">
-    <!-- Artículo principal - FORMATO BLOG -->
     <article class="blog-article py-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <!-- Cabecera del artículo mejorada con título de conferencia y foto del autor -->
             <header class="article-header mb-5">
               <div class="row align-items-center">
                 <div class="col-lg-9">
-                  <!-- Título de la conferencia por encima de todo -->
                   <div class="conference-title-badge mb-3">
                     <span>Jornadas Internacionales de Economía Circular</span>
                   </div>
@@ -77,9 +72,7 @@
 
         
             
-            <!-- Introducción -->
             <p class="lead">La economía circular representa un cambio de paradigma en la manera en que diseñamos, producimos y consumimos productos y servicios. A diferencia del modelo lineal tradicional de "tomar-fabricar-desechar", la economía circular propone un sistema regenerativo donde los residuos y la contaminación se eliminan por diseño, los productos y materiales se mantienen en uso, y los sistemas naturales se regeneran.</p>
-                <!-- Primera imagen destacada con caption -->
                 <figure class="article-figure">
                   <img src="./assets/images/economia-circular.png" alt="Diagrama de economía circular" class="img-fluid rounded mb-2">
                   <figcaption class="figure-caption text-center">Diagrama conceptual del modelo de economía circular y sus principales componentes</figcaption>
@@ -92,7 +85,6 @@
             
             <p>La transición hacia una economía circular no solo beneficia al medio ambiente, sino que también presenta oportunidades económicas significativas. Según estudios recientes, la adopción de modelos circulares podría generar un ahorro de materiales de hasta 700.000 millones de euros anuales solo en Europa. Además, tiene el potencial de crear nuevos empleos en sectores como la remanufactura, el reciclaje avanzado y los servicios de reparación.</p>
 
-            <!-- Lista de principios -->
             <div class="principles-list my-4">
               <h3>Los tres principios clave son:</h3>
               <ul>
@@ -102,7 +94,6 @@
               </ul>
             </div>
 
-            <!-- Segunda imagen con caption -->
             <figure class="article-figure">
               <img src="./assets/images/conferencia-sostenibilidad.png" alt="Conferencia sobre sostenibilidad" class="img-fluid rounded mb-2">
               <figcaption class="figure-caption text-center">Participantes de la edición anterior debatiendo sobre estrategias de implementación</figcaption>
@@ -112,7 +103,6 @@
             
             <p>La economía circular tiene el potencial de transformar prácticamente todos los sectores industriales. Sin embargo, algunos presentan oportunidades particularmente significativas debido a su huella ambiental actual y el potencial de mejora. Durante nuestras jornadas, exploraremos a fondo las estrategias específicas para cada uno de estos sectores:</p>
 
-            <!-- Lista numerada -->
             <ol class="sectors-list my-4">
               <li><strong>Construcción</strong> - Responsable del 40% de los residuos sólidos globales, este sector puede beneficiarse enormemente de prácticas circulares como la deconstrucción selectiva y el uso de materiales reciclados.</li>
               <li><strong>Textil</strong> - La industria de la moda rápida genera millones de toneladas de residuos anualmente. Modelos como la moda circular, el alquiler de ropa y el reciclaje de fibras ofrecen alternativas prometedoras.</li>
@@ -126,7 +116,6 @@
             
             <p>Sin embargo, estos desafíos no son insuperables. Empresas pioneras están demostrando que es posible implementar modelos circulares rentables y escalables. Además, los consumidores están cada vez más dispuestos a apoyar marcas con prácticas sostenibles, creando un incentivo de mercado para la innovación circular.</p>
 
-            <!-- Lista con iconos - Versión completa mejorada -->
             <div class="benefits-list my-5 p-4 bg-light border rounded">
               <h3 class="text-primary mb-4">Beneficios de asistir a las jornadas</h3>
               <div class="row">
@@ -181,13 +170,11 @@
             
             <p>La economía circular no es simplemente una opción más sostenible; es cada vez más una necesidad económica y ecológica frente a la creciente escasez de recursos y los desafíos ambientales globales. Las Jornadas de Economía Circular 2025 representan una oportunidad única para que profesionales de diversos sectores adquieran las herramientas, conocimientos y conexiones necesarias para liderar esta transición en sus organizaciones.</p>
             
-            <!-- CTA final -->
             <div class="article-cta text-center my-5">
               <p class="lead">¿Estás listo para formar parte de la revolución circular?</p>
-              <a href="#" class="btn btn-lg btn-primary mt-3">Inscríbete a las jornadas</a>
+              <a href="#" class="btn btn-lg btn-primary mt-3" id="inscripcionBtn">Inscríbete a las jornadas</a>
             </div>
 
-            <!-- Etiquetas del artículo -->
             <div class="article-tags">
               <span class="badge bg-primary-subtle text-primary-emphasis me-2">Economía Circular</span>
               <span class="badge bg-success-subtle text-success-emphasis me-2">Sostenibilidad</span>
@@ -195,7 +182,6 @@
               <span class="badge bg-warning-subtle text-warning-emphasis">Eventos</span>
             </div>
             
-            <!-- Apartado de compartir -->
             <div class="article-share mt-5 pt-4 border-top">
               <h5>Comparte este artículo</h5>
               <div class="share-buttons mt-3">
@@ -210,7 +196,20 @@
     </article>
   </main>
 
-  <!-- Pie de página con Bootstrap -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="inscripcionToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        <strong class="me-auto">Jornadas Economía Circular</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body">
+        ¡Gracias por tu interés! Hemos registrado tu inscripción a las jornadas. Te enviaremos un email con todos los detalles.
+      </div>
+    </div>
+  </div>
+
   <footer class="bg-primary text-white py-4">
     <div class="container">
       <div class="row align-items-center">
@@ -251,9 +250,7 @@
 
   <!-- Script de inicialización de Bootstrap -->
   <script>
-    // Carga de respaldo si bootstrap no está disponible
     document.addEventListener('DOMContentLoaded', function() {
-      // Verificar si bootstrap ya está disponible (desde main.js)
       if (typeof bootstrap === 'undefined') {
         console.warn('Bootstrap no disponible, cargando desde CDN...');
         const script = document.createElement('script');
@@ -268,11 +265,9 @@
         initBootstrapComponents();
       }
       
-      // Función para inicializar componentes
       function initBootstrapComponents() {
         console.log('Inicializando componentes...');
         
-        // 1. Inicializar navegación toggler
         const navbarToggler = document.querySelector('.navbar-toggler');
         if (navbarToggler) {
           console.log('Encontrado navbar toggler');
@@ -284,7 +279,6 @@
           });
         }
         
-        // 2. Inicializar modales
         const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
         if (modalTriggers.length > 0) {
           console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
@@ -299,7 +293,6 @@
           });
         }
         
-        // 3. Tooltips y popovers
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         if (tooltipTriggerList.length > 0 && bootstrap.Tooltip) {
           tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
@@ -310,15 +303,12 @@
           popoverTriggerList.forEach(el => new bootstrap.Popover(el));
         }
         
-        // 4. Filtros para participantes (específico para participantes.html)
         const filterButtons = document.querySelectorAll('[data-filter]');
         if (filterButtons.length > 0) {
           console.log(`Encontrados ${filterButtons.length} botones de filtro`);
           filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-              // Remover clase activa de todos los botones
               filterButtons.forEach(btn => btn.classList.remove('active'));
-              // Añadir clase activa al botón actual
               this.classList.add('active');
               
               const filterValue = this.getAttribute('data-filter');
@@ -338,12 +328,10 @@
     });
   </script>
 
-  <!-- Script para solucionar el problema de bloqueo modal -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Escucha eventos de cierre de modal
       document.body.addEventListener('hidden.bs.modal', function() {
-        // Elimina cualquier backdrop residual
         const backdrops = document.querySelectorAll('.modal-backdrop');
         if (backdrops.length > 0) {
           backdrops.forEach(backdrop => {
@@ -351,16 +339,13 @@
           });
         }
         
-        // Asegúrate de que el body no tenga las clases que bloquean el scroll
         document.body.classList.remove('modal-open');
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
       });
       
-      // También trata los clics en botones de cierre
       document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
         button.addEventListener('click', function() {
-          // Breve retraso para asegurar que se active después del evento de Bootstrap
           setTimeout(function() {
             const backdrops = document.querySelectorAll('.modal-backdrop');
             backdrops.forEach(backdrop => backdrop.remove());
@@ -370,6 +355,34 @@
           }, 300);
         });
       });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inscripcionBtn = document.getElementById('inscripcionBtn');
+      const inscripcionToast = document.getElementById('inscripcionToast');
+      
+      console.log('Verificando elementos de inscripción:', inscripcionBtn ? 'Botón encontrado' : 'Botón no encontrado', inscripcionToast ? 'Toast encontrado' : 'Toast no encontrado');
+      
+      if (inscripcionBtn && inscripcionToast) {
+        inscripcionBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Botón de inscripción clickeado');
+          
+          if (typeof bootstrap !== 'undefined') {
+            console.log('Bootstrap disponible, mostrando toast');
+            const toast = new bootstrap.Toast(inscripcionToast);
+            toast.show();
+          } else {
+            console.warn('Bootstrap no disponible, usando fallback');
+            inscripcionToast.classList.add('show');
+            setTimeout(function() {
+              inscripcionToast.classList.remove('show');
+            }, 5000);
+          }
+        });
+      }
     });
   </script>
 </body>

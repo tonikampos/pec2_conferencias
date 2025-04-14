@@ -35,7 +35,6 @@
     </nav>
   </header>
 
-  <!-- Contenido principal -->
   <main class="poster-grid">
     <section class="grid-hero">
       <div id="carouselJornadas" class="carousel slide custom-carousel" data-bs-ride="carousel">
@@ -54,7 +53,7 @@
           </div>
           <div class="carousel-item">
             <img src="./assets/images/imagen2.png" class="d-block w-100 carousel-img" alt="Charlas">
-            <div class="carousel-caption"> <!-- Eliminar d-none d-md-block -->
+            <div class="carousel-caption"> 
               <h2 class="carousel-title">Charlas y Conferencias</h2>
               <p class="carousel-text d-none d-sm-block">
                 Encuentra expert@s que comparten sus proyectos e ideas sostenibles</p>
@@ -62,7 +61,7 @@
           </div>
           <div class="carousel-item">
             <img src="./assets/images/imagen3.jpg" class="d-block w-100 carousel-img" alt="Talleres">
-            <div class="carousel-caption"> <!-- Eliminar d-none d-md-block -->
+            <div class="carousel-caption"> 
               <h2 class="carousel-title">Talleres Prácticos Para Aprender</h2>
               <p class="carousel-text d-none d-sm-block">Implementa la economía circular</p>
             </div>
@@ -82,7 +81,6 @@
     <section class="grid-welcome" id="bienvenidos">
       <div class="cq-container welcome-section">
         <h2>Bienvenid@s a nuestras Jornadas de Economía Circular</h2>
-        <!-- Card de Bootstrap (componente 2) -->
         <div class="card mb-4 mb-md-5">
           <div class="card-body p-3 p-md-4 text-center">
             <h3 class="card-title mb-2 mb-md-3">Empezamos, ¿qué es la Economía Circular?</h3>
@@ -94,7 +92,6 @@
           </div>
         </div>
         
-        <!-- Alertas de Bootstrap (componente 3) -->
         <div class="alert alert-primary d-flex flex-column flex-sm-row align-items-start align-items-sm-center" role="alert">
           <i class="fas fa-calendar-alt me-0 me-sm-2 mb-2 mb-sm-0"></i>
           <div>Apunta en la agenda, las jornadas se celebrarán los días 2, 3 y 4 de Junio de 2025</div>
@@ -111,9 +108,7 @@
       <div class="cq-container featured-section">
         <h2>Actividades Destacadas</h2>
         
-        <!-- Tarjetas con Cards de Bootstrap -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 g-md-4">
-          <!-- Tarjeta 1 -->
           <div class="col mb-3">
             <div class="card feature-card h-100">
               <div class="card-body">
@@ -129,7 +124,6 @@
             </div>
           </div>
           
-          <!-- Tarjeta 2 -->
           <div class="col mb-3">
             <div class="card feature-card h-100">
               <div class="card-body">
@@ -145,7 +139,6 @@
             </div>
           </div>
           
-          <!-- Tarjeta 3 -->
           <div class="col mb-3">
             <div class="card feature-card h-100">
               <div class="card-body">
@@ -172,7 +165,6 @@
           Inscripción
         </button>
         
-        <!-- Toast de Bootstrap -->
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
           <div id="inscripcionToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
@@ -191,7 +183,6 @@
     </section>
   </main>
 
-  <!-- Pie de página con Bootstrap -->
   <footer class="bg-primary text-white py-4">
     <div class="container">
       <div class="row align-items-center">
@@ -217,11 +208,9 @@
     </div>
   </footer>
   
-  <!-- JavaScript para Bootstrap y funcionalidades -->
   <script type="module">
     import * as bootstrap from 'bootstrap';
     
-    // Inicializar toasts
     const inscripcionBtn = document.getElementById('inscripcionBtn');
     const inscripcionToast = document.getElementById('inscripcionToast');
     
@@ -233,11 +222,8 @@
     }
   </script>
 
-  <!-- Script de inicialización de Bootstrap -->
   <script>
-    // Carga de respaldo si bootstrap no está disponible
     document.addEventListener('DOMContentLoaded', function() {
-      // Verificar si bootstrap ya está disponible (desde main.js)
       if (typeof bootstrap === 'undefined') {
         console.warn('Bootstrap no disponible, cargando desde CDN...');
         const script = document.createElement('script');
@@ -252,11 +238,9 @@
         initBootstrapComponents();
       }
       
-      // Función para inicializar componentes
       function initBootstrapComponents() {
         console.log('Inicializando componentes...');
         
-        // 1. Inicializar navegación toggler
         const navbarToggler = document.querySelector('.navbar-toggler');
         if (navbarToggler) {
           console.log('Encontrado navbar toggler');
@@ -268,7 +252,6 @@
           });
         }
         
-        // 2. Inicializar modales
         const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
         if (modalTriggers.length > 0) {
           console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
@@ -283,7 +266,6 @@
           });
         }
         
-        // 3. Tooltips y popovers
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         if (tooltipTriggerList.length > 0 && bootstrap.Tooltip) {
           tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
@@ -294,15 +276,12 @@
           popoverTriggerList.forEach(el => new bootstrap.Popover(el));
         }
         
-        // 4. Filtros para participantes (específico para participantes.html)
         const filterButtons = document.querySelectorAll('[data-filter]');
         if (filterButtons.length > 0) {
           console.log(`Encontrados ${filterButtons.length} botones de filtro`);
           filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-              // Remover clase activa de todos los botones
               filterButtons.forEach(btn => btn.classList.remove('active'));
-              // Añadir clase activa al botón actual
               this.classList.add('active');
               
               const filterValue = this.getAttribute('data-filter');
@@ -322,12 +301,9 @@
     });
   </script>
 
-  <!-- Script para solucionar el problema de bloqueo modal -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Escucha eventos de cierre de modal
       document.body.addEventListener('hidden.bs.modal', function() {
-        // Elimina cualquier backdrop residual
         const backdrops = document.querySelectorAll('.modal-backdrop');
         if (backdrops.length > 0) {
           backdrops.forEach(backdrop => {
@@ -335,16 +311,13 @@
           });
         }
         
-        // Asegúrate de que el body no tenga las clases que bloquean el scroll
         document.body.classList.remove('modal-open');
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
       });
       
-      // También trata los clics en botones de cierre
       document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
         button.addEventListener('click', function() {
-          // Breve retraso para asegurar que se active después del evento de Bootstrap
           setTimeout(function() {
             const backdrops = document.querySelectorAll('.modal-backdrop');
             backdrops.forEach(backdrop => backdrop.remove());
@@ -364,12 +337,10 @@
       
       if (inscripcionBtn && inscripcionToast) {
         inscripcionBtn.addEventListener('click', function() {
-          // Verificar si bootstrap está disponible
           if (typeof bootstrap !== 'undefined') {
             const toast = new bootstrap.Toast(inscripcionToast);
             toast.show();
           } else {
-            // Fallback si bootstrap no está disponible
             inscripcionToast.classList.add('show');
             setTimeout(function() {
               inscripcionToast.classList.remove('show');
