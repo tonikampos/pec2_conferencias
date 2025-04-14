@@ -334,89 +334,166 @@
     </div>
   </footer>
 
-  <script type="module">
-    import * as bootstrap from 'bootstrap';
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM cargado - inicializando página de talleres');
     
-    document.addEventListener('DOMContentLoaded', function() {
+    // 1. Verificar disponibilidad de Bootstrap
+    if (typeof bootstrap === 'undefined') {
+      console.warn('Bootstrap no disponible, cargando desde CDN...');
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+      script.onload = function() {
+        console.log('Bootstrap cargado con éxito desde CDN');
+        initTalleresPage();
+      };
+      document.body.appendChild(script);
+    } else {
+      console.log('Bootstrap ya disponible');
+      initTalleresPage();
+    }
+    
+    // 2. Función principal de inicialización
+    function initTalleresPage() {
+      // 2.1 Filtros para talleres - CORREGIDO para apuntar a workshop-item
       const filterButtons = document.querySelectorAll('[data-filter]');
       const workshopItems = document.querySelectorAll('.workshop-item');
       
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          
-          const filterValue = this.getAttribute('data-filter');
-          
-          workshopItems.forEach(item => {
-            if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
+      console.log(`Encontrados ${filterButtons.length} botones de filtro`);
+      console.log(`Encontrados ${workshopItems.length} talleres para filtrar`);
       
-      const inscriptionBtn = document.getElementById('inscriptionBtn');
-      const inscriptionToast = document.getElementById('inscriptionToast');
-      
-      if (inscriptionBtn && inscriptionToast) {
-        inscriptionBtn.addEventListener('click', () => {
-          const toast = new bootstrap.Toast(inscriptionToast);
-          const workshopModal = document.querySelector('.modal.show');
-          const modal = bootstrap.Modal.getInstance(workshopModal);
-          modal.hide();
-          toast.show();
-        });
-      }
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof bootstrap === 'undefined') {
-        console.warn('Bootstrap no disponible, cargando desde CDN...');
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
-        script.onload = function() {
-          console.log('Bootstrap cargado con éxito');
-          initBootstrapComponents();
-        };
-        document.body.appendChild(script);
-      } else {
-        console.log('Bootstrap ya disponible');
-        initBootstrapComponents();
-      }
-      
-      function initBootstrapComponents() {
-        console.log('Inicializando componentes...');
-        
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        if (navbarToggler) {
-          console.log('Encontrado navbar toggler');
-          navbarToggler.addEventListener('click', function() {
-            const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
-            if (target && bootstrap.Collapse) {
-              const collapse = new bootstrap.Collapse(target, {toggle: true});
-            }
-          });
-        }
-        
-        const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
-        if (modalTriggers.length > 0) {
-          console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
-          modalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function() {
-              const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
-              if (target && bootstrap.Modal) {
-                const modal = new bootstrap.Modal(target);
-                modal.show();
+      if (filterButtons.length > 0 && workshopItems.length > 0) {
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            console.log(`Filtro seleccionado: ${this.getAttribute('data-filter')}`);
+            
+            // Remover clase activa de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Añadir clase activa al botón actual
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            workshopItems.forEach(item => {
+              if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
               }
             });
           });
-        }
-        
+        });
+      }
+      
+      // 2.2 Manejo de inscripciones (botones inscripción)
+      const inscriptionBtns = document.querySelectorAll('.modal .btn-primary');
+      const inscriptionToast = document.getElementById('inscriptionToast');
+
+      console.log(`Encontrados ${inscriptionBtns.length} botones de inscripción`);
+      console.log('Toast encontrado:', inscriptionToast ? 'Sí' : 'No');
+
+      if (inscriptionBtns.length > 0 && inscriptionToast) {
+        inscriptionBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            console.log('Botón inscripción clickeado');
+            
+            // Cerrar modal actual
+            const workshopModal = this.closest('.modal');
+            if (workshopModal && typeof bootstrap !== 'undefined') {
+              try {
+                const modal = bootstrap.Modal.getInstance(workshopModal);
+                if (modal) modal.hide();
+              } catch(e) {
+                console.error('Error al cerrar modal:', e);
+                // Fallback manual
+                workshopModal.classList.remove('show');
+                document.body.classList.remove('modal-open');
+                const backdrops = document.querySelectorAll('.modal-backdrop');
+                backdrops.forEach(backdrop => backdrop.remove());
+              }
+            }
+            
+            // Mostrar toast
+            if (typeof bootstrap !== 'undefined') {
+              try {
+                const toast = new bootstrap.Toast(inscriptionToast);
+                toast.show();
+              } catch(e) {
+                console.error('Error al mostrar toast:', e);
+                // Fallback manual para toast
+                inscriptionToast.classList.add('show');
+                inscriptionToast.style.display = 'block';
+                setTimeout(function() {
+                  inscriptionToast.classList.remove('show');
+                  setTimeout(() => {
+                    inscriptionToast.style.display = '';
+                  }, 300);
+                }, 5000);
+              }
+            } else {
+              // Fallback si bootstrap no está disponible
+              inscriptionToast.classList.add('show');
+              inscriptionToast.style.display = 'block';
+              setTimeout(function() {
+                inscriptionToast.classList.remove('show');
+                setTimeout(() => {
+                  inscriptionToast.style.display = '';
+                }, 300);
+              }, 5000);
+            }
+            
+            // Limpiar backdrops residuales
+            setTimeout(cleanupModalBackdrops, 300);
+          });
+        });
+      }
+      
+      // 2.3 Inicializar otros componentes Bootstrap
+      initBootstrapComponents();
+      
+      // 2.4 Configurar limpieza de modales
+      document.body.addEventListener('hidden.bs.modal', cleanupModalBackdrops);
+      
+      document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
+        button.addEventListener('click', function() {
+          setTimeout(cleanupModalBackdrops, 300);
+        });
+      });
+    }
+    
+    // 3. Inicialización de componentes Bootstrap
+    function initBootstrapComponents() {
+      console.log('Inicializando componentes Bootstrap...');
+      
+      // 3.1 Navbar toggler
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      if (navbarToggler) {
+        navbarToggler.addEventListener('click', function() {
+          const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
+          if (target && bootstrap && bootstrap.Collapse) {
+            const collapse = new bootstrap.Collapse(target, {toggle: true});
+          }
+        });
+      }
+      
+      // 3.2 Inicializar modales manualmente
+      const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
+      if (modalTriggers.length > 0) {
+        console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
+        modalTriggers.forEach(trigger => {
+          trigger.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-bs-target') || this.getAttribute('data-target');
+            const target = document.querySelector(targetId);
+            if (target && bootstrap && bootstrap.Modal) {
+              const modal = new bootstrap.Modal(target);
+              modal.show();
+            }
+          });
+        });
+      }
+      
+      // 3.3 Tooltips y popovers
+      if (bootstrap) {
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         if (tooltipTriggerList.length > 0 && bootstrap.Tooltip) {
           tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
@@ -426,59 +503,33 @@
         if (popoverTriggerList.length > 0 && bootstrap.Popover) {
           popoverTriggerList.forEach(el => new bootstrap.Popover(el));
         }
-        
-        const filterButtons = document.querySelectorAll('[data-filter]');
-        if (filterButtons.length > 0) {
-          console.log(`Encontrados ${filterButtons.length} botones de filtro`);
-          filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-              filterButtons.forEach(btn => btn.classList.remove('active'));
-              this.classList.add('active');
-              
-              const filterValue = this.getAttribute('data-filter');
-              const participantItems = document.querySelectorAll('.participant-flex-item');
-              
-              participantItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                  item.style.display = '';
-                } else {
-                  item.style.display = 'none';
-                }
-              });
-            });
-          });
-        }
       }
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.addEventListener('hidden.bs.modal', function() {
-        const backdrops = document.querySelectorAll('.modal-backdrop');
-        if (backdrops.length > 0) {
-          backdrops.forEach(backdrop => {
-            backdrop.remove();
-          });
-        }
-        
-        document.body.classList.remove('modal-open');
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-      });
+    }
+    
+    // 4. Función para limpiar backdrops modales
+    function cleanupModalBackdrops() {
+      console.log('Limpiando modal backdrops');
       
-      document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
-        button.addEventListener('click', function() {
-          setTimeout(function() {
-            const backdrops = document.querySelectorAll('.modal-backdrop');
-            backdrops.forEach(backdrop => backdrop.remove());
-            document.body.classList.remove('modal-open');
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-          }, 300);
-        });
-      });
-    });
-  </script>
+      // Eliminar cualquier backdrop residual
+      const backdrops = document.querySelectorAll('.modal-backdrop');
+      if (backdrops.length > 0) {
+        backdrops.forEach(backdrop => backdrop.remove());
+      }
+      
+      // Restaurar estilo del body
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+  });
+</script>
+
+<!-- Estilos de fallback para toast -->
+<style>
+  .toast.show {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
 </body>
 </html>
