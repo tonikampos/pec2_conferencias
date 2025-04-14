@@ -11,7 +11,8 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0;
- /* padding: 1rem;*/
+
+ /* padding: 1rem; */
   font-size: 16px;
   line-height: 24px;
   background-color: vars.$primary-color;
@@ -25,8 +26,8 @@ body {
   border-radius: 2rem;
   text-align: center;
   background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.1),
+    0 2px 4px -1px rgb(0, 0, 0, 0.06);
 }
 
 .uoc-logo {
@@ -111,7 +112,7 @@ body {
 }
 
 /* Ajustes para tamaños específicos */
-@media (max-width: 991.98px) {
+@media (width <= 991.98px) {
   .navbar-collapse {
     padding-left: 0;
     padding-right: 0;
@@ -119,7 +120,7 @@ body {
 }
 
 /* Si es necesario, ajusta el logo en móviles */
-@media (max-width: 575.98px) {
+@media (width <= 575.98px) {
   .navbar-brand {
     margin-right: 0; /* Reducir margen derecho del logo */
     padding-left: 0; /* Eliminar padding izquierdo */
@@ -141,7 +142,7 @@ body {
   overflow: hidden;
   
   // Efectos visuales
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 .5rem 1rem rgb(0,0,0,.15);
   border-radius: 0.5rem;
   
   .carousel-inner {
@@ -156,7 +157,7 @@ body {
   }
   
   .carousel-caption {
-    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+    background: linear-gradient(to bottom, rgb(0,0,0,0), rgb(0,0,0,0.8));
     left: 0;
     right: 0;
     bottom: 0;
@@ -255,7 +256,7 @@ body {
   
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.15);
   }
 }
 
@@ -266,7 +267,7 @@ body {
 }
 
 /* Media queries específicas para diferentes tamaños */
-@media (max-width: 575.98px) {
+@media (width <= 575.98px) {
   .custom-carousel {
     max-height: 300px;
     
@@ -300,14 +301,14 @@ body {
   }
 }
 
-@media (min-width: 576px) {
+@media (width >= 576px) {
   .btn-sm.btn-md-normal {
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .carousel-title {
     font-size: 1.75rem;
   }
@@ -322,7 +323,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (width >= 768px) and (width <= 991.98px) {
   .custom-carousel {
     max-height: 350px;
     
@@ -332,7 +333,7 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (width >= 992px) {
   .carousel-title {
     font-size: 2rem;
   }
@@ -413,7 +414,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     
-    @media (min-width: 768px) {
+    @media (width >= 768px) {
       grid-gap: 2rem;
       padding: 2rem;
     }
@@ -426,7 +427,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 1 / 2; // Mantiene el carrusel en la primera fila
     
-    @media (min-width: 992px) {
+    @media (width >= 992px) {
       grid-column: 2 / 12; // Más estrecho en desktop para efecto póster
     }
   }
@@ -437,7 +438,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 2 / 3; // Coloca la bienvenida en la segunda fila (debajo del carrusel)
     
-    @media (min-width: 992px) {
+    @media (width >= 992px) {
       grid-column: 2 / 12; // Centrado en pantallas grandes
     }
   }
@@ -448,7 +449,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 3 / 4; // Coloca las actividades en la tercera fila (debajo de la bienvenida)
     
-    @media (min-width: 992px) {
+    @media (width >= 992px) {
       grid-column: 2 / 12; // Centrado en pantallas grandes
     }
   }
@@ -459,7 +460,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 4 / 5; // Mantiene la inscripción en la cuarta fila
     
-    @media (min-width: 992px) {
+    @media (width >= 992px) {
       grid-column: 3 / 11; // Centrado en pantallas grandes
     }
   }
@@ -470,10 +471,10 @@ body {
   .poster-grid {
     background-color: #f8f9fa;
     
-    @media (min-width: 992px) {
+    @media (width >= 992px) {
       // Efecto de póster con borde y sombra
       border: 1px solid #dee2e6;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.15);
       border-radius: 0.5rem;
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -499,7 +500,7 @@ body {
     padding: 1.5rem;
     border-radius: 0.5rem;
     
-    @media (min-width: 768px) {
+    @media (width >= 768px) {
       padding: 2rem;
     }
     
@@ -525,9 +526,9 @@ body {
     padding: 2rem;
     background-color: var(--bs-light);
     border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.25rem 0.5rem rgb(0, 0, 0, 0.05);
     
-    @media (min-width: 768px) {
+    @media (width >= 768px) {
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
@@ -540,7 +541,7 @@ body {
 .grid-hero .custom-carousel {
   margin: 0;
   
-  @media (min-width: 992px) {
+  @media (width >= 992px) {
     // Efecto póster para el carrusel
     transform: rotate(-1deg);
     margin: 0.5rem 0;
@@ -557,7 +558,7 @@ body {
   height: 100%;
   margin: 0;
   
-  @media (min-width: 992px) {
+  @media (width >= 992px) {
     // Efectos visuales tipo póster
     &:hover {
       transform: scale(1.03) translateY(-5px);
@@ -593,7 +594,7 @@ body {
       background: linear-gradient(to right, transparent, var(--bs-primary), transparent);
       opacity: 0.5;
       
-      @media (min-width: 768px) {
+      @media (width >= 768px) {
         left: 25%;
         right: 25%;
       }
@@ -624,7 +625,7 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
     
-    @media (min-width: 768px) {
+    @media (width >= 768px) {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
@@ -640,7 +641,7 @@ body {
 
 // Mejorar la presentación de las tarjetas de actividades
 .grid-featured .row {
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -654,7 +655,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     padding: 2rem;
   }
 }

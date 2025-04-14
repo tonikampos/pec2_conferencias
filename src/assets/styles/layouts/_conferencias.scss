@@ -3,15 +3,15 @@
 
 /* Variables específicas para conferencias */
 $conference-border-radius: 0.75rem;
-$conference-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+$conference-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.08);
 $conference-transition: all 0.3s ease;
 $conference-hover-transform: translateY(-5px);
-$conference-hover-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+$conference-hover-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.15);
 
 /* Colores para categorías si no están definidos globalmente */
-$tech-color: hsl(210, 100%, 50%);      // Azul para tecnología
-$design-color: hsl(330, 100%, 50%);    // Rosa para diseño
-$business-color: hsl(150, 70%, 40%);   // Verde para negocios
+$tech-color: hsl(210deg, 100%, 50%);      // Azul para tecnología
+$design-color: hsl(330deg, 100%, 50%);    // Rosa para diseño
+$business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
 
 @layer base {
   .article-header {
@@ -66,7 +66,7 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
     
     .card-header {
       background-color: transparent;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgb(0, 0, 0, 0.05);
       padding: 1rem 1.25rem;
     }
     
@@ -102,7 +102,7 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
   
   .conference-date {
     font-size: 0.85rem;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgb(0, 0, 0, 0.6);
   }
 }
 
@@ -120,7 +120,6 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
       }
       
       .conference-description {
-       
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -178,7 +177,7 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
 }
 
 /* Mejoras adicionales de responsividad para conferencias */
-@media (max-width: 575.98px) {
+@media (width <= 575.98px) {
   .article-header {
     padding: 2rem 0;
     
@@ -251,7 +250,7 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
 }
 
 /* Mejoras para tablets */
-@media (min-width: 576px) and (max-width: 991.98px) {
+@media (width >= 576px) and (width <= 991.98px) {
   .conference-card {
     .card-title {
       font-size: 1.1rem;
@@ -268,7 +267,7 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
 }
 
 /* Ajustar la navegación de tabs en diferentes tamaños */
-@media (max-width: 767.98px) {
+@media (width <= 767.98px) {
   .nav-pills {
     gap: 0.5rem;
     
@@ -309,7 +308,7 @@ $business-color: hsl(150, 70%, 40%);   // Verde para negocios
   margin-bottom: 2.5rem;
   
   img {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgb(0,0,0,0.1);
   }
   
   figcaption {
@@ -340,7 +339,7 @@ blockquote:has(.blockquote-footer) {
     left: 10px;
     font-size: 4rem;
     opacity: 0.1;
-    font-family: 'Georgia', serif;
+    font-family: Georgia, serif;
   }
   
   p {
@@ -443,7 +442,7 @@ blockquote:has(.blockquote-footer) {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px rgb(0,0,0,0.1);
     margin-bottom: 0.75rem;
   }
   
@@ -454,7 +453,7 @@ blockquote:has(.blockquote-footer) {
     font-weight: 700;
     line-height: 1.2;
     
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
       font-size: 1.8rem;
     }
   }
@@ -464,7 +463,7 @@ blockquote:has(.blockquote-footer) {
     height: 60px;
     object-fit: cover;
     border: 2px solid var(--bs-primary);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px rgb(0,0,0,0.1);
   }
   
   .article-author {
@@ -487,7 +486,7 @@ blockquote:has(.blockquote-footer) {
   // Asegurarse que la fecha de publicación siempre sea visible
   .article-date {
     opacity: 0.9;
-    text-shadow: 0 0 1px rgba(255,255,255,0.5);
+    text-shadow: 0 0 1px rgb(255,255,255,0.5);
   }
 }
 
@@ -551,10 +550,10 @@ blockquote:has(.blockquote-footer) {
   font-weight: 700;
   line-height: 1.2;
   color: #004085; // Color azul más oscuro y visible
-  text-shadow: 0 1px 1px rgba(255,255,255,0.5); // Ligera sombra para mejorar legibilidad
+  text-shadow: 0 1px 1px rgb(255,255,255,0.5); // Ligera sombra para mejorar legibilidad
   letter-spacing: -0.5px; // Ajuste de espaciado para mejor lectura
   
-  @media (max-width: 767px) {
+  @media (width <= 767px) {
     font-size: 2rem;
   }
   
