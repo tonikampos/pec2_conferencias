@@ -46,7 +46,6 @@
   }
 }
 
-// Utilidades responsive
 .hide-on-mobile {
   @media (max-width: ($breakpoint-medium - 1px)) {
     display: none !important;

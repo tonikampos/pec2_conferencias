@@ -1,11 +1,7 @@
-// Funciones personalizadas para el proyecto
 @function rem($pixels) {
   @return ($pixels / 16px) * 1rem;
 }
 
-// Ejemplo: color más oscuro
-/* stylelint-disable scss/operator-no-unspaced */
 @function darken-custom($color, $amount) {
   @return color.adjust($color, $lightness: -$amount);
 }
-/* stylelint-enable scss/operator-no-unspaced */

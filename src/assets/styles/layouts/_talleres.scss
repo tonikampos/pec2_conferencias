@@ -1,19 +1,14 @@
-/* Usando capas de cascada para talleres */
 @layer base, components, layouts, utilities;
 
-/* Variables específicas para talleres */
 $tech-color: hsl(210deg, 100%, 50%);
 $design-color: hsl(330deg, 100%, 50%);
 $business-color: hsl(150deg, 70%, 40%);
 
-/* Estilos para la página de talleres */
 
-// Variables específicas para talleres
 $workshop-border-radius: 0.75rem;
 $workshop-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.08);
 $workshop-transition: all 0.3s ease;
 
-// Estilos para las tarjetas de talleres
 .workshop-card {
   border-radius: $workshop-border-radius;
   overflow: hidden;
@@ -37,13 +32,11 @@ $workshop-transition: all 0.3s ease;
   }
 }
 
-// Estilos para la imagen del taller
 .workshop-img {
   height: 180px;
   object-fit: cover;
 }
 
-// Estilos para niveles y detalles
 .workshop-level {
   font-size: 0.7rem;
   padding: 0.4rem 0.8rem;

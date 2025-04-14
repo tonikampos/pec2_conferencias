@@ -4,7 +4,7 @@
     margin-bottom: 2rem;
   
     .container {
-        padding: 0;  // Eliminar padding para permitir que la imagen sea completa
+        padding: 0;  
         
         @media (min-width: $breakpoint-medium) {
             padding: 0 $container-padding;

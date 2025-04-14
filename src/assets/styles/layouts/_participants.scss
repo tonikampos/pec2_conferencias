@@ -118,7 +118,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
     object-fit: cover;
   }
   
-  // Añadimos clases de utilidad específicas para esta página
   .participant-item[data-category="tech"] .card-subtitle {
     color: $tech-color !important;
   }
@@ -140,7 +139,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
   }
 }
 
-// Mejoras para responsividad
 @media (width <= 575.98px) {
   .participant-card {
     .card-title {
@@ -239,7 +237,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
     max-width: calc(33.333% - 1.5rem);
   }
   
-  // Mantener los mismos estilos que tenías antes
   .participant-card {
     border-radius: 0.5rem;
     box-shadow: $participant-shadow;

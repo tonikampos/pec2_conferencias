@@ -1,6 +1,5 @@
 @use "../base/variables" as vars;
 
-/* Estilos específicos para la página de inicio */
 
 * {
   box-sizing: border-box;
@@ -12,7 +11,6 @@ body {
   height: 100vh;
   margin: 0;
 
- /* padding: 1rem; */
   font-size: 16px;
   line-height: 24px;
   background-color: vars.$primary-color;
@@ -60,7 +58,6 @@ body {
   text-align: center;
 }
 
-/* Estilos para componentes compartidos */
 .text-truncate-2 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -77,13 +74,11 @@ body {
   overflow: hidden;
 }
 
-/* Ajustes para el navbar */
 .navbar-logo {
   max-height: 30px;
   width: auto;
 }
 
-/* Ajustes para el navbar - Corrección de centrado en móviles */
 .navbar {
   padding-left: 0;
   padding-right: 0;
@@ -94,7 +89,6 @@ body {
   }
 }
 
-/* Corrección para el navbar descentrado */
 .navbar {
   .container {
     padding-left: 15px !important;
@@ -102,16 +96,14 @@ body {
   }
 }
 
-/* Asegurar que la alineación del navbar es correcta */
 .navbar-nav {
-  margin-left: 0; /* Quitar cualquier margen izquierdo extra */
+  margin-left: 0; 
   
   &.ms-auto {
-    margin-right: 0; /* Asegurar que no hay margen extra a la derecha */
+    margin-right: 0; 
   }
 }
 
-/* Ajustes para tamaños específicos */
 @media (width <= 991.98px) {
   .navbar-collapse {
     padding-left: 0;
@@ -119,29 +111,24 @@ body {
   }
 }
 
-/* Si es necesario, ajusta el logo en móviles */
 @media (width <= 575.98px) {
   .navbar-brand {
-    margin-right: 0; /* Reducir margen derecho del logo */
-    padding-left: 0; /* Eliminar padding izquierdo */
+    margin-right: 0; 
+    padding-left: 0; 
   }
   
   
 }
 
-/* En caso que tu navbar tenga contenido que se desborde */
 .navbar-container {
   width: 100%; /* Asegurar que ocupe el ancho completo */
   max-width: 100%; /* No permitir desbordamiento */
 }
 
-/* Estilos para el carousel - versión mejorada */
 .custom-carousel {
-  // Tamaño controlado
   max-height: 450px;
   overflow: hidden;
   
-  // Efectos visuales
   box-shadow: 0 .5rem 1rem rgb(0,0,0,.15);
   border-radius: 0.5rem;
   
@@ -176,7 +163,6 @@ body {
     font-size: 1.1rem;
   }
   
-  // Mejora controles
   .carousel-control-prev, .carousel-control-next {
     width: 10%;
     opacity: 0.7;
@@ -199,16 +185,14 @@ body {
   }
 }
 
-/* Solución para el carrusel con tamaño fijo */
 .custom-carousel {
   position: relative;
   overflow: hidden;
   
-  // Fijar proporciones del carrusel (16:9 o la que necesites)
   &::before {
     content: "";
     display: block;
-    padding-top: 56.25%; // Relación de aspecto 16:9 (9/16 = 0.5625)
+    padding-top: 56.25%; 
   }
   
   .carousel-inner {
@@ -229,12 +213,11 @@ body {
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover; // Importante: mantiene la relación de aspecto y llena el contenedor
+      object-fit: cover; 
     }
   }
 }
 
-// Para asegurar que la transición no afecte el tamaño
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
@@ -242,13 +225,11 @@ body {
   width: 100%;
 }
 
-// Prevenir que el contenido debajo del carrusel se mueva
 .grid-hero {
   height: auto;
   overflow: hidden;
 }
 
-/* Estilos para tarjetas */
 .feature-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 0.5rem;
@@ -260,13 +241,11 @@ body {
   }
 }
 
-/* Estilos para el footer */
 .footer-logo {
   max-height: 35px;
   width: auto;
 }
 
-/* Media queries específicas para diferentes tamaños */
 @media (width <= 575.98px) {
   .custom-carousel {
     max-height: 300px;
@@ -290,7 +269,6 @@ body {
     }
   }
   
-  /* Mantén los estilos existentes para card-title y alert */
   .card-title {
     font-size: 1.25rem;
   }
@@ -388,11 +366,8 @@ body {
   }
 }
 
-/* Implementación CSS Grid con soporte para navegadores antiguos */
 
-// Contenedor principal con CSS Grid
 .poster-grid {
-  // Versión para navegadores que non soportan Grid
   @supports not (display: grid) {
     display: block;
     max-width: 1200px;
@@ -404,11 +379,10 @@ body {
     }
   }
   
-  // Versión con CSS Grid
   @supports (display: grid) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto auto auto auto; // Estructura de 4 filas automáticas
+    grid-template-rows: auto auto auto auto; 
     grid-gap: 1.5rem;
     padding: 1rem;
     max-width: 1400px;
@@ -421,14 +395,13 @@ body {
   }
 }
 
-// Posicionar elementos en el grid - Estilo póster con nuevo orden vertical
 .grid-hero {
   @supports (display: grid) {
     grid-column: 1 / -1;
-    grid-row: 1 / 2; // Mantiene el carrusel en la primera fila
+    grid-row: 1 / 2; 
     
     @media (width >= 992px) {
-      grid-column: 2 / 12; // Más estrecho en desktop para efecto póster
+      grid-column: 2 / 12; 
     }
   }
 }
@@ -436,10 +409,10 @@ body {
 .grid-welcome {
   @supports (display: grid) {
     grid-column: 1 / -1;
-    grid-row: 2 / 3; // Coloca la bienvenida en la segunda fila (debajo del carrusel)
+    grid-row: 2 / 3; 
     
     @media (width >= 992px) {
-      grid-column: 2 / 12; // Centrado en pantallas grandes
+      grid-column: 2 / 12; 
     }
   }
 }
@@ -447,10 +420,10 @@ body {
 .grid-featured {
   @supports (display: grid) {
     grid-column: 1 / -1;
-    grid-row: 3 / 4; // Coloca las actividades en la tercera fila (debajo de la bienvenida)
+    grid-row: 3 / 4;
     
     @media (width >= 992px) {
-      grid-column: 2 / 12; // Centrado en pantallas grandes
+      grid-column: 2 / 12; 
     }
   }
 }
@@ -458,21 +431,19 @@ body {
 .grid-inscription {
   @supports (display: grid) {
     grid-column: 1 / -1;
-    grid-row: 4 / 5; // Mantiene la inscripción en la cuarta fila
+    grid-row: 4 / 5; 
     
     @media (width >= 992px) {
-      grid-column: 3 / 11; // Centrado en pantallas grandes
+      grid-column: 3 / 11; 
     }
   }
 }
 
-/* Estilos adicionales para enfatizar el diseño de póster */
 @supports (display: grid) {
   .poster-grid {
     background-color: #f8f9fa;
     
     @media (width >= 992px) {
-      // Efecto de póster con borde y sombra
       border: 1px solid #dee2e6;
       box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.15);
       border-radius: 0.5rem;
@@ -535,38 +506,32 @@ body {
   }
 }
 
-/* Ajustes para componentes dentro del grid */
 
-// Ajustes para el carrusel
 .grid-hero .custom-carousel {
   margin: 0;
   
   @media (width >= 992px) {
-    // Efecto póster para el carrusel
     transform: rotate(-1deg);
     margin: 0.5rem 0;
     
     .carousel-caption {
-      transform: rotate(1deg); // Contrarrestar la rotación para el texto
+      transform: rotate(1deg); 
     }
   }
 }
 
-// Ajustes para bloques de texto
 .grid-welcome .card,
 .grid-featured .feature-card {
   height: 100%;
   margin: 0;
   
   @media (width >= 992px) {
-    // Efectos visuales tipo póster
     &:hover {
       transform: scale(1.03) translateY(-5px);
     }
   }
 }
 
-// Ajustes para la sección de inscripción
 .grid-inscription {
   button {
     transition: transform 0.3s ease;
@@ -577,9 +542,7 @@ body {
   }
 }
 
-/* Estilos adicionales para mejorar la presentación vertical */
 
-// Añadir separación visual entre secciones
 @supports (display: grid) {
   .grid-welcome, .grid-featured, .grid-inscription {
     position: relative;
@@ -601,7 +564,6 @@ body {
     }
   }
   
-  // Mejorar las cabeceras de sección
   .grid-welcome h2,
   .grid-featured h2,
   .grid-inscription h2 {
@@ -620,7 +582,6 @@ body {
     }
   }
   
-  // Mejorar el espaciado para diseño vertical
   .grid-welcome, .grid-featured {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -632,14 +593,11 @@ body {
   }
 }
 
-/* Ajustes específicos para componentes en el nuevo orden vertical */
 
-// Reducir espacio extra en el carrusel
 .custom-carousel {
   margin-bottom: 1rem;
 }
 
-// Mejorar la presentación de las tarjetas de actividades
 .grid-featured .row {
   @media (width >= 768px) {
     max-width: 900px;
@@ -648,7 +606,6 @@ body {
   }
 }
 
-// Centrar la inscripción
 .grid-inscription {
   text-align: center;
   max-width: 700px;

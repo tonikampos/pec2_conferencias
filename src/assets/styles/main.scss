@@ -1,6 +1,4 @@
-/**
- * Import Bootstrap and customize
- */
+
 
 @import "bootstrap-custom";
 @import "../../../node_modules/bootstrap/scss/functions";
@@ -10,62 +8,42 @@
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/utilities";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
-
-/**
- * Import FontAwesome
- */
 @import "../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
-
-/**
- * Import variables (tus variables actuales)
- */
 @import "base/variables";
 
-/**
- * Import utilities
- */
+
 @import "utilities/mixins";
 @import "utilities/functions";
 
-/**
- * Import base styles
- */
+
 @import "base/reset";
 @import "base/typography";
 
-/**
- * Import container queries
- */
+
 @import "utilities/container-queries";
 
-/**
- * Import components
- */
+
 @import "components/header";
 @import "components/footer";
 @import "components/hero";
 
-/**
- * Import layouts
- */
+
 @import "layouts/grid";
 @import "layouts/home";
 @import "layouts/participants";
 @import "layouts/conferencias";
 @import "layouts/talleres";
 
-// Añadir al final del archivo
 
-/* Fix para el desplazamiento del menú entre páginas */
 html {
-    overflow-y: scroll; /* Forzar barra de desplazamiento siempre visible */
+    overflow-y: scroll; 
   }
   
   body {
-    padding-right: 0 !important; /* Prevenir padding automático por Bootstrap modals */
+    padding-right: 0 !important; 
   }
   
   .navbar {
     width: 100%;
-    min-height: 62px; /* Fijar altura mínima */
+    min-height: 62px; 
   }

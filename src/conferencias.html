@@ -235,11 +235,9 @@
     </div>
   </footer>
 
-  <!-- JavaScript para Bootstrap y funcionalidades -->
   <script type="module">
     import * as bootstrap from 'bootstrap';
     
-    // Inicializar tooltips
     document.addEventListener('DOMContentLoaded', function() {
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -248,7 +246,6 @@
     });
   </script>
 
-  <!-- Script de inicialización de Bootstrap -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       if (typeof bootstrap === 'undefined') {
@@ -330,7 +327,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Escucha eventos de cierre de modal
       document.body.addEventListener('hidden.bs.modal', function() {
         const backdrops = document.querySelectorAll('.modal-backdrop');
         if (backdrops.length > 0) {

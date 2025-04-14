@@ -107,7 +107,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
 }
 
 @layer layouts {
-  /* Container queries para conferencias */
   @container (width < 600px) {
     .conference-card {
       .card-header {
@@ -176,7 +175,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
   }
 }
 
-/* Mejoras adicionales de responsividad para conferencias */
 @media (width <= 575.98px) {
   .article-header {
     padding: 2rem 0;
@@ -242,14 +240,12 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
     font-size: 0.9rem;
   }
   
-  /* Mejorar la visualización de fechas y ubicaciones en tarjetas */
   .conference-date .fas,
   .conference-date .far {
     margin-top: 0.25rem;
   }
 }
 
-/* Mejoras para tablets */
 @media (width >= 576px) and (width <= 991.98px) {
   .conference-card {
     .card-title {
@@ -266,7 +262,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
   }
 }
 
-/* Ajustar la navegación de tabs en diferentes tamaños */
 @media (width <= 767.98px) {
   .nav-pills {
     gap: 0.5rem;
@@ -281,7 +276,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
     }
   }
   
-  /* Ajustar el modal para dispositivos pequeños */
   .modal-body {
     padding: 1rem;
     
@@ -297,12 +291,10 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
   }
 }
 
-/* Clase para imágenes responsivas con object-fit */
 .object-fit-cover {
   object-fit: cover;
 }
 
-/* Estilos para el formato de blog/artículo */
 
 .article-figure:has(figcaption) {
   margin-bottom: 2.5rem;
@@ -323,7 +315,6 @@ $business-color: hsl(150deg, 70%, 40%);   // Verde para negocios
   color: var(--bs-primary);
 }
 
-// Estilizar el blockquote usando :has() para detectar citas
 blockquote:has(.blockquote-footer) {
   padding: 2rem;
   margin: 2rem 0;
@@ -354,7 +345,6 @@ blockquote:has(.blockquote-footer) {
   }
 }
 
-// Estilizar listas usando :where() para menor especificidad
 :where(.principles-list, .sectors-list) {
   ul, ol {
     padding-left: 1.5rem;
@@ -372,7 +362,6 @@ blockquote:has(.blockquote-footer) {
   }
 }
 
-// Estilizar la lista de beneficios
 .benefits-list {
   background-color: var(--bs-light);
   padding: 1.5rem;
@@ -389,7 +378,6 @@ blockquote:has(.blockquote-footer) {
   }
 }
 
-// Estilos para la lista de beneficios con iconos mejorados
 .benefits-icons-list {
   list-style: none;
   padding: 0;
@@ -425,13 +413,11 @@ blockquote:has(.blockquote-footer) {
   }
 }
 
-// Estilizar el header del artículo y meta información
 .article-header {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--bs-gray-200);
   
-  // Nuevo estilo para el título de la conferencia
   .conference-title-badge {
     display: inline-block;
     background-color: var(--bs-primary);
@@ -471,26 +457,22 @@ blockquote:has(.blockquote-footer) {
     font-size: 1.1rem;
   }
   
-  // Mejorar contraste de la fecha
   .article-date {
     font-size: 0.9rem;
-    color: #495057; // Color más oscuro para mejor contraste
-    font-weight: 500; // Un poco más grueso para mejor legibilidad
+    color: #495057; 
+    font-weight: 500; 
   }
 }
 
-// Usar :has() para mejorar la apariencia cuando hay foto
 .article-meta:has(img.author-image) {
   padding: 0.5rem 0;
   
-  // Asegurarse que la fecha de publicación siempre sea visible
   .article-date {
     opacity: 0.9;
     text-shadow: 0 0 1px rgb(255,255,255,0.5);
   }
 }
 
-// Estilizar párrafos del blog para mejor legibilidad
 .blog-article {
   p:not(.lead) {
     line-height: 1.8;
@@ -505,13 +487,11 @@ blockquote:has(.blockquote-footer) {
     margin-bottom: 1.5rem;
   }
   
-  // Usar :has() para dar más espacio a párrafos seguidos de encabezados
   p:has(+ h2), p:has(+ h3) {
     margin-bottom: 2rem;
   }
 }
 
-// Estilizar el call to action
 .article-cta {
   background-color: var(--bs-light);
   padding: 2.5rem;
@@ -525,7 +505,6 @@ blockquote:has(.blockquote-footer) {
   }
 }
 
-// Estilizar etiquetas y sección de compartir
 .article-tags {
   margin-bottom: 2rem;
   
@@ -543,28 +522,25 @@ blockquote:has(.blockquote-footer) {
   }
 }
 
-// Mejora de la clase article-title para mayor visibilidad
 .article-title {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #004085; // Color azul más oscuro y visible
-  text-shadow: 0 1px 1px rgb(255,255,255,0.5); // Ligera sombra para mejorar legibilidad
-  letter-spacing: -0.5px; // Ajuste de espaciado para mejor lectura
+  color: #004085; 
+  text-shadow: 0 1px 1px rgb(255,255,255,0.5); 
+  letter-spacing: -0.5px; 
   
   @media (width <= 767px) {
     font-size: 2rem;
   }
   
-  // Aplicando :has() para añadir más énfasis cuando está en el header
   &:has(+ .article-meta) {
     border-bottom: 3px solid #dae0e5;
     padding-bottom: 0.75rem;
   }
 }
 
-// Forzar alta especificidad para asegurar que se aplican estos estilos
 body .blog-article .article-title,
 main .container .article-title,
 .col-lg-8 .article-title {

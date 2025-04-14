@@ -1,10 +1,8 @@
-/* Container queries para componentes responsive */
 .cq-container {
     container-type: inline-size;
     container-name: content;
   }
   
-  /* Estilos para la sección de bienvenida en el index */
   @container (width < 600px) {
     .welcome-section {
       .card {
@@ -34,7 +32,6 @@
     }
   }
   
-  /* Estilos para la sección de eventos destacados */
   @container (width < 768px) {
     .featured-section {
       .feature-card {
