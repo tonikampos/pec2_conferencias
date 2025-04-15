@@ -225,25 +225,20 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       if (typeof bootstrap === 'undefined') {
-        console.warn('Bootstrap no disponible, cargando desde CDN...');
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
         script.onload = function() {
-          console.log('Bootstrap cargado con éxito');
           initBootstrapComponents();
         };
         document.body.appendChild(script);
       } else {
-        console.log('Bootstrap ya disponible');
         initBootstrapComponents();
       }
       
       function initBootstrapComponents() {
-        console.log('Inicializando componentes...');
         
         const navbarToggler = document.querySelector('.navbar-toggler');
         if (navbarToggler) {
-          console.log('Encontrado navbar toggler');
           navbarToggler.addEventListener('click', function() {
             const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
             if (target && bootstrap.Collapse) {
@@ -254,7 +249,6 @@
         
         const modalTriggers = document.querySelectorAll('[data-bs-toggle="modal"]');
         if (modalTriggers.length > 0) {
-          console.log(`Encontrados ${modalTriggers.length} triggers de modales`);
           modalTriggers.forEach(trigger => {
             trigger.addEventListener('click', function() {
               const target = document.querySelector(this.getAttribute('data-bs-target') || this.getAttribute('data-target'));
@@ -278,7 +272,6 @@
         
         const filterButtons = document.querySelectorAll('[data-filter]');
         if (filterButtons.length > 0) {
-          console.log(`Encontrados ${filterButtons.length} botones de filtro`);
           filterButtons.forEach(button => {
             button.addEventListener('click', function() {
               filterButtons.forEach(btn => btn.classList.remove('active'));
